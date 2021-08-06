@@ -1,0 +1,7 @@
+<!-- 
+PROPS:
+
+[TITLE: SERVER TYPE  => (STRING)
+CONTENT: INFORMATION => (HTML)] fetch
+
+ -->

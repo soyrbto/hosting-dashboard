@@ -1,0 +1,8 @@
+<!-- 
+PROPS:
+
+{LOCATION: COUNTRY FLAG, COUNTRY NAME  => [IMG, TEXT]
+SERVER: QTY OF SERVERS => (NUMBER)} /fetch
+
+
+ -->
