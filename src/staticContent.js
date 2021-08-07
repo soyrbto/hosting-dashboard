@@ -8,7 +8,8 @@ let panelTab,
   cloudTable,
   account,
   support,
-  header;
+  header,
+  cloudLocation;
 
 panelTab = {
   top: ['Dashboard', 'cloud server', 'dedicated server'],
@@ -50,6 +51,25 @@ dedicatedOrder = {
   systemT: 'Select operating system',
   byeText: `Press the "Create Server" button after verifying that all the fields are correct. You can remove this server whenever you want, so don't worry!`,
 };
+
+cloudLocation = [
+  {
+    country: 'germany',
+    ServerNumber: 3,
+    country: 'London',
+    ServerNumber: 3,
+    country: 'Russia',
+    ServerNumber: 1,
+    country: 'Canada',
+    ServerNumber: 3,
+    country: 'Singapur',
+    ServerNumber: 3,
+    country: 'Sweden ',
+    ServerNumber: 1,
+    country: 'india ',
+    ServerNumber: 1,
+  },
+];
 
 cloudOrder = {
   title: 'Dedicated server order',
@@ -147,6 +167,7 @@ const content = {
   account: account,
   support: support,
   header: header,
+  cloudLocation: cloudLocation,
 };
 
 export default content;
