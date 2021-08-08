@@ -24,7 +24,7 @@ CONTENT: INFORMATION => (HTML)] fetch
   </div>
 
   <div class="server-number">
-    <h3 class="serverNumber">{model.os}</h3>
+    <h3 class="serverNumber bold">{model.os}</h3>
   </div>
 </div>
 

@@ -3,6 +3,7 @@
   import CardLocation from '../../components/cardLocation.svelte';
   import CardModel from '../../components/cardModel.svelte';
   import CardSize from '../../components/cardSize.svelte';
+  import Button from '../../components/button.svelte';
 
   const content = c.cloudOrder;
   const location = c.cloudLocation;
@@ -58,8 +59,7 @@
   <div class="goodbye">
     <h4 class="price bold">price: 746$/year</h4>
     <p class="bodyVerySmall">{content.byeText}</p>
-
-    <!-- button -->
+    <Button />
   </div>
 </div>
 
@@ -82,6 +82,10 @@
 
     h4 {
       color: $blue;
+    }
+
+    p {
+      margin-bottom: 20px;
     }
 
     .card-section {

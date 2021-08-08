@@ -12,6 +12,17 @@ ICON: TRUE OR FALSE (DEFAULT) => (BOOLEAN)] /static
 function: what to do / static
 
  -->
+
+<button>
+  <h4 class="bold">Call to Action</h4>
+</button>
+
 <style lang="scss">
-  //some styles
+  button {
+    background-color: $blue;
+    padding: 6px 127px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+  }
 </style>

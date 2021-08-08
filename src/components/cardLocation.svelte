@@ -23,7 +23,7 @@ SERVER: QTY OF SERVERS => (NUMBER)} /fetch
 
   <div class="server-number">
     {#each Array(location.serverNumber) as _, i}
-      <h3 class="serverNumber">{i + 1}</h3>
+      <h3 class="serverNumber bold">{i + 1}</h3>
     {/each}
   </div>
 </div>
