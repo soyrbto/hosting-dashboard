@@ -57,7 +57,7 @@
   </div>
 
   <div class="goodbye">
-    <h4 class="price bold">price: 746$/year</h4>
+    <h4 class="price bold">Price: 746$/year</h4>
     <p class="bodyVerySmall">{content.byeText}</p>
     <Button />
   </div>
@@ -112,6 +112,12 @@
       text-align: justify;
       width: 370px;
       margin-bottom: 60px;
+
+      .price {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 13px;
+      }
     }
   }
 </style>

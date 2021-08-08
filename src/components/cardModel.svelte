@@ -30,6 +30,7 @@ CONTENT: INFORMATION => (HTML)] fetch
 
 <style lang="scss">
   .card-wrapper {
+    background-color: white;
     padding: 10px;
     display: flex;
     flex-direction: column;

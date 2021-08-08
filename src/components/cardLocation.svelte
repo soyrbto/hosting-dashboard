@@ -30,6 +30,7 @@ SERVER: QTY OF SERVERS => (NUMBER)} /fetch
 
 <style lang="scss">
   .card-wrapper {
+    background-color: white;
     padding: 10px;
     display: flex;
     flex-direction: column;
