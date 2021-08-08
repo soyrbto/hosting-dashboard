@@ -65,6 +65,7 @@
 
 <style lang="scss">
   .main-wrapper {
+    width: 1540px;
     padding: 0 60px;
     background-color: #f3f8fc;
 

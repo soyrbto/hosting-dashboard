@@ -13,10 +13,12 @@
 
 <style lang="scss">
   header {
+    justify-content: flex-end;
     display: flex;
     height: 104px;
 
     .container-logo {
+      background-color: white;
       display: flex;
       align-items: center;
       width: 380px;
@@ -30,7 +32,6 @@
       width: 1540px;
       padding-right: 25px;
       background-color: $blueBackground;
-      border-bottom: 1px solid $greyLightMedium;
 
       h4 {
         padding-right: 10px;
