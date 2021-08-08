@@ -1,3 +1,7 @@
+<script>
+  export let model;
+</script>
+
 <!-- 
 PROPS:
 
@@ -5,3 +9,60 @@ PROPS:
 CONTENT: INFORMATION => (HTML)] fetch
 
  -->
+
+<div class="card-wrapper">
+  <div class="model">
+    <h4>
+      {model.gMemory} / <span>{model.processors}</span>
+    </h4>
+    <h4>
+      {model.memory} <span>{model.memoryType}</span>
+    </h4>
+    <h4>
+      {model.memorySpeed} <span>Transfer</span>
+    </h4>
+  </div>
+
+  <div class="server-number">
+    <h3 class="serverNumber">{model.os}</h3>
+  </div>
+</div>
+
+<style lang="scss">
+  .card-wrapper {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    border-radius: 20px;
+    border: solid 4px $blue;
+
+    h4 span {
+      color: $greyMedium;
+    }
+
+    .model {
+      padding-top: 10px;
+      padding-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 15px;
+      width: 100%;
+      background-color: $blueLight;
+      background-color: #ebf3fe;
+      margin-bottom: 27px;
+
+      img {
+        margin-bottom: 7px;
+      }
+    }
+
+    .server-number {
+      width: 160px;
+      justify-content: space-around;
+      display: flex;
+    }
+  }
+</style>

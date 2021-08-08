@@ -1,3 +1,7 @@
+<script>
+  //some logic
+</script>
+
 <!-- 
 PROPS:
 
@@ -8,3 +12,6 @@ ICON: TRUE OR FALSE (DEFAULT) => (BOOLEAN)] /static
 function: what to do / static
 
  -->
+<style lang="scss">
+  //some styles
+</style>
