@@ -1,6 +1,9 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
   export let itemName;
   export let selected = 'true';
+
+  const dispatch = createEventDispatcher();
 </script>
 
 <!-- 
@@ -11,7 +14,13 @@
         STATE: BOOLEAN / STATIC
  -->
 
-<div class="main-wrapper" class:selected>
+<div
+  class="main-wrapper"
+  class:selected
+  on:click={() => {
+    dispatch('clicked');
+  }}
+>
   <h3 class="tab-item">{itemName}</h3>
 
   <div class="vertical-line" />
@@ -19,6 +28,7 @@
 
 <style lang="scss">
   .main-wrapper {
+    cursor: pointer;
     height: 74px;
     width: 360px;
     display: flex;
@@ -40,6 +50,8 @@
   }
 
   .selected {
+    cursor: default;
+
     .tab-item {
       color: $blue;
       background-color: $blueLight;

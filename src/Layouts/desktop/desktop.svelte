@@ -3,18 +3,24 @@
   import PanelTab from './panelTab.svelte';
   import Dashboard from './dashboard.svelte';
   import CloudOrder from './cloudOrder.svelte';
+  import DedicatedOrder from './dedicatedOrder.svelte';
 
-  let tab = CloudOrder;
+  let tabs = [Dashboard, CloudOrder, DedicatedOrder];
+  let selectedTab;
 
   //   prop:
   // account name: string / fetch => store
 </script>
 
 <main>
-  <PanelTab />
+  <PanelTab
+    on:changeComp={(e) => {
+      selectedTab = e.detail;
+    }}
+  />
   <div class="main-wrapper">
     <Header />
-    <svelte:component this={tab} />
+    <svelte:component this={tabs[selectedTab]} />
   </div>
 </main>
 

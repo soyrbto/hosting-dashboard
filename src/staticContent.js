@@ -14,7 +14,7 @@ let panelTab,
   cloudSize;
 
 panelTab = {
-  top: ['Dashboard', 'cloud server', 'dedicated server'],
+  top: ['Dashboard', 'Cloud server', 'Dedicated server'],
   bottom: ['account', 'support'],
 };
 
@@ -46,7 +46,7 @@ dedicatedServer = {
 
 dedicatedOrder = {
   title: 'Dedicated server order',
-  labelT: 'label',
+  labelT: 'Label',
   locationT: 'Select location',
   modelT: 'Select model',
   diskT: 'Select disk',
@@ -128,7 +128,7 @@ cloudSize = [
 
 cloudOrder = {
   title: 'Cloud server order',
-  labelT: 'label',
+  labelT: 'Label',
   locationT: 'Select location',
   modelT: 'Select model',
   diskT: 'Select disk',

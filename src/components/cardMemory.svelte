@@ -14,7 +14,7 @@ CONTENT: INFORMATION => (HTML)] fetch
 <div class="card-wrapper">
   <div class="disk">
     <h2>
-      {disk.size}
+      {disk.size} GB
     </h2>
   </div>
 
@@ -32,7 +32,7 @@ CONTENT: INFORMATION => (HTML)] fetch
     align-items: center;
     width: 220px;
     border-radius: 20px;
-    border: solid 4px $blue;
+    border: solid 4px $blueLight;
 
     h4 span {
       color: $greyMedium;
@@ -60,5 +60,9 @@ CONTENT: INFORMATION => (HTML)] fetch
       justify-content: space-around;
       display: flex;
     }
+  }
+
+  .card-wrapper:hover {
+    border: solid 4px $blue;
   }
 </style>

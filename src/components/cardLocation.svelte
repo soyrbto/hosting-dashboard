@@ -37,7 +37,7 @@ SERVER: QTY OF SERVERS => (NUMBER)} /fetch
     align-items: center;
     width: 220px;
     border-radius: 20px;
-    border: solid 4px $blue;
+    border: solid 4px $blueLight;
 
     .location {
       padding-top: 10px;
@@ -61,5 +61,9 @@ SERVER: QTY OF SERVERS => (NUMBER)} /fetch
       justify-content: space-around;
       display: flex;
     }
+  }
+
+  .card-wrapper:hover {
+    border: solid 4px $blue;
   }
 </style>
