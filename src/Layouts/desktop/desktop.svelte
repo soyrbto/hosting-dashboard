@@ -10,14 +10,21 @@
   // account name: string / fetch => store
 </script>
 
-<Header />
 <main>
   <PanelTab />
-  <svelte:component this={tab} />
+  <div class="main-wrapper">
+    <Header />
+    <svelte:component this={tab} />
+  </div>
 </main>
 
 <style lang="scss">
   main {
     display: flex;
+
+    .main-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
   }
 </style>

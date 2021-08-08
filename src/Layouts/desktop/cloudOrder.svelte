@@ -18,7 +18,7 @@
 
   <div class="label-wrapper">
     <h2>{content.labelT}</h2>
-    <input type="text" />
+    <input type="text" placeholder="Label" />
   </div>
 
   <div class="location-wrapper">
@@ -75,6 +75,19 @@
 
     .label-wrapper {
       margin-bottom: 60px;
+
+      input {
+        padding-left: 10px;
+        border: solid $blue 2px;
+        background-color: white;
+        border-radius: 5px;
+        height: 40px;
+        width: 513px;
+
+        &::placeholder {
+          margin-left: 5px;
+        }
+      }
     }
 
     h2 {
@@ -90,8 +103,9 @@
     }
 
     .card-section {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      margin-bottom: 60px;
 
       .card-wrapper {
         margin-right: 65px;
@@ -108,9 +122,10 @@
     }
 
     .goodbye {
+      color: black;
       margin: 0 auto;
       margin-top: 95px;
-      text-align: justify;
+      text-align: center;
       width: 370px;
       margin-bottom: 60px;
 
