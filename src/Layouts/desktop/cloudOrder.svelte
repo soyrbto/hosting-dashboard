@@ -3,41 +3,83 @@
   import CardLocation from '../../components/cardLocation.svelte';
 
   const content = c.cloudOrder;
+  const location = c.cloudLocation;
 
   // Request: price for every element   /fetch
 </script>
 
-<h1>CLoud servers Order</h1>
-<div class="label-wrapper">
-  <h1>{content.labelT}</h1>
-  <div class="box">some</div>
-</div>
+<div class="main-wrapper">
+  <h1>{content.title}</h1>
 
-<div class="location-wrapper">
-  <h2>{content.locationT}</h2>
+  <div class="label-wrapper">
+    <h2>{content.labelT}</h2>
+    <input type="text" />
+  </div>
 
-  <CardLocation />
-</div>
+  <div class="location-wrapper">
+    <h2>{content.locationT}</h2>
+    <div class="card-section">
+      {#each location as location, i}
+        <div class="card-wrapper">
+          <CardLocation {location} />
+        </div>
+      {/each}
+    </div>
+  </div>
 
-<div class="model-wrapper">
-  <h2>{content.modelT}</h2>
+  <div class="model-wrapper">
+    <h2>{content.modelT}</h2>
 
-  <!-- aqui va component de model -->
-</div>
+    <!-- aqui va component de model -->
+  </div>
 
-<div class="size-wrapper">
-  <h2>{content.diskT}</h2>
+  <div class="size-wrapper">
+    <h2>{content.diskT}</h2>
 
-  <!-- aqui va component de size -->
-</div>
+    <!-- aqui va component de size -->
+  </div>
 
-<div class="goodbye">
-  <div class="price">price: 746$/year</div>
-  <div class="text">{content.byeText}</div>
+  <div class="goodbye">
+    <div class="price">price: 746$/year</div>
+    <div class="text">{content.byeText}</div>
 
-  <!-- button -->
+    <!-- button -->
+  </div>
 </div>
 
 <style lang="scss">
-  //some styles
+  .main-wrapper {
+    padding: 0 60px;
+    background-color: #f3f8fc;
+
+    h1 {
+      margin-bottom: 45px;
+    }
+
+    .label-wrapper {
+      margin-bottom: 60px;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+    }
+
+    .card-section {
+      display: flex;
+      flex-wrap: wrap;
+
+      .card-wrapper {
+        margin-right: 65px;
+        margin-bottom: 55px;
+      }
+    }
+
+    .main-wrapper {
+      padding-left: 380px;
+    }
+
+    .location-wrapper {
+      margin-bottom: 60px;
+    }
+  }
 </style>

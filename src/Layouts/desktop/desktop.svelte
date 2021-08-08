@@ -2,8 +2,9 @@
   import Header from './header.svelte';
   import PanelTab from './panelTab.svelte';
   import Dashboard from './dashboard.svelte';
+  import CloudOrder from './cloudOrder.svelte';
 
-  let tab = Dashboard;
+  let tab = CloudOrder;
 
   //   prop:
   // account name: string / fetch => store
@@ -16,5 +17,7 @@
 </main>
 
 <style lang="scss">
-  //some styles
+  main {
+    display: flex;
+  }
 </style>

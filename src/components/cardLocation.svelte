@@ -13,18 +13,52 @@ SERVER: QTY OF SERVERS => (NUMBER)} /fetch
 <div class="card-wrapper">
   <div class="location">
     <img
-      src="./img/{location.country.svg}"
+      width="58"
+      height="83"
+      src="./img/{location.country}.svg"
       alt="server located in {location.country} "
     />
     <div class="country">{location.country}</div>
   </div>
+
   <div class="server-number">
-    {#each location.serverNumber as serverNumber, i}
-      <div class="serverNumber">i</div>
+    {#each Array(location.serverNumber) as _, i}
+      <h3 class="serverNumber">{i + 1}</h3>
     {/each}
   </div>
 </div>
 
 <style lang="scss">
-  //some styles
+  .card-wrapper {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    border-radius: 20px;
+    border: solid 4px $blue;
+
+    .location {
+      padding-top: 10px;
+      padding-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 15px;
+      width: 100%;
+      background-color: $blueLight;
+      background-color: #ebf3fe;
+      margin-bottom: 27px;
+
+      img {
+        margin-bottom: 7px;
+      }
+    }
+
+    .server-number {
+      width: 160px;
+      justify-content: space-around;
+      display: flex;
+    }
+  }
 </style>

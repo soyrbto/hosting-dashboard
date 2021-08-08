@@ -53,26 +53,17 @@ dedicatedOrder = {
 };
 
 cloudLocation = [
-  {
-    country: 'germany',
-    ServerNumber: 3,
-    country: 'London',
-    ServerNumber: 3,
-    country: 'Russia',
-    ServerNumber: 1,
-    country: 'Canada',
-    ServerNumber: 3,
-    country: 'Singapur',
-    ServerNumber: 3,
-    country: 'Sweden ',
-    ServerNumber: 1,
-    country: 'india ',
-    ServerNumber: 1,
-  },
+  { country: 'germany', serverNumber: 3 },
+  { country: 'London', serverNumber: 3 },
+  { country: 'Russia', serverNumber: 1 },
+  { country: 'Canada', serverNumber: 3 },
+  { country: 'Singapur', serverNumber: 3 },
+  { country: 'Sweden', serverNumber: 1 },
+  { country: 'india', serverNumber: 1 },
 ];
 
 cloudOrder = {
-  title: 'Dedicated server order',
+  title: 'Cloud server order',
   labelT: 'label',
   locationT: 'Select location',
   modelT: 'Select model',
