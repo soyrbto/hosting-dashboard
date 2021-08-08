@@ -9,7 +9,9 @@ let panelTab,
   account,
   support,
   header,
-  cloudLocation;
+  cloudLocation,
+  cloudModel,
+  cloudSize;
 
 panelTab = {
   top: ['Dashboard', 'cloud server', 'dedicated server'],
@@ -53,26 +55,79 @@ dedicatedOrder = {
 };
 
 cloudLocation = [
+  { country: 'germany', serverNumber: 3 },
+  { country: 'London', serverNumber: 3 },
+  { country: 'Russia', serverNumber: 1 },
+  { country: 'Canada', serverNumber: 3 },
+  { country: 'Singapur', serverNumber: 3 },
+  { country: 'Sweden', serverNumber: 1 },
+  { country: 'india', serverNumber: 1 },
+];
+
+cloudModel = [
   {
-    country: 'germany',
-    ServerNumber: 3,
-    country: 'London',
-    ServerNumber: 3,
-    country: 'Russia',
-    ServerNumber: 1,
-    country: 'Canada',
-    ServerNumber: 3,
-    country: 'Singapur',
-    ServerNumber: 3,
-    country: 'Sweden ',
-    ServerNumber: 1,
-    country: 'india ',
-    ServerNumber: 1,
+    gMemory: '1 GB',
+    processors: 1,
+    memory: '25 GB',
+    memoryType: 'SSD Disk',
+    memorySpeed: '1000 GB',
+    os: 'server OS1',
+  },
+  {
+    gMemory: '2 GB',
+    processors: 1,
+    memory: '50 GB',
+    memoryType: 'SSD Disk',
+    memorySpeed: '2000 GB',
+    os: 'server OS2',
+  },
+  {
+    gMemory: '3 GB',
+    processors: 1,
+    memory: '75 GB',
+    memoryType: 'SSD Disk',
+    memorySpeed: '3000 GB',
+    os: 'server OS3',
+  },
+  {
+    gMemory: '4 GB',
+    processors: 1,
+    memory: '100 GB',
+    memoryType: 'SSD Disk',
+    memorySpeed: '4000 GB',
+    os: 'server OS4',
+  },
+  {
+    gMemory: '5 GB',
+    processors: 1,
+    memory: '25 GB',
+    memoryType: 'SSD Disk',
+    memorySpeed: '1000 GB',
+    os: 'server OS1',
+  },
+];
+
+cloudSize = [
+  {
+    size: 100,
+    cost: 50,
+  },
+  {
+    size: 150,
+    cost: 100,
+  },
+  {
+    size: 200,
+    cost: 150,
+  },
+  {
+    size: 500,
+    cost: 200,
   },
 ];
 
 cloudOrder = {
-  title: 'Dedicated server order',
+  title: 'Cloud server order',
   labelT: 'label',
   locationT: 'Select location',
   modelT: 'Select model',
@@ -168,6 +223,8 @@ const content = {
   support: support,
   header: header,
   cloudLocation: cloudLocation,
+  cloudModel: cloudModel,
+  cloudSize: cloudSize,
 };
 
 export default content;

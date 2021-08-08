@@ -1,110 +1,119 @@
-/* Nunito-sans-regular*/
+/* nunito-sans-regular - latin */
 @font-face {
-    font-display: swap;
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''),
-      url('/fonts/NunitoSans-regular.ttf') format('ttf'),
-      /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('/fonts/NunitoSans-regular.ttf') format('ttf'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+    url('../fonts/nunito-sans-v6-latin-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../fonts/nunito-sans-v6-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* Nunito-sans-semibold*/
+/* nunito-sans-600 - latin */
 @font-face {
-    font-display: swap;
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 600;
-    src: local(''),
-      url('/fonts/NunitoSans-SemiBold.ttf') format('ttf'),
-      /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('/fonts/NunitoSans-SemiBold.ttf') format('ttf'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''), url('../fonts/nunito-sans-v6-latin-600.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../fonts/nunito-sans-v6-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* Nunito-sans-Bold*/
+/* nunito-sans-700 - latin */
 @font-face {
-    font-display: swap;
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 700;
-    src: local(''),
-      url('/fonts/NunitoSans-Bold.ttf') format('ttf'),
-      /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('/fonts/NunitoSans-Bold.ttf') format('ttf'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''), url('../fonts/nunito-sans-v6-latin-700.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../fonts/nunito-sans-v6-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 h1 {
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 45px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 45px;
 }
 
 h2 {
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+h3 {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+h3.bold {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
 }
 
 h2.large {
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 45px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 45px;
 }
 
 h3.title {
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 22px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
 }
 
 h3.selected {
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 22px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
 }
 
 h3.unselected {
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 22px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
 }
 
 h4 {
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
 }
 
-h4.bold{
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
+h4.bold {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 p.bodyVerySmall {
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
 }
 
 p.bodySmall {
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 p.bodySmallBold {
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
 }

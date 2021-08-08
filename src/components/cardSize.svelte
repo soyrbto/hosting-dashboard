@@ -1,30 +1,25 @@
+<!-- aqui va component de disk -->
+<script>
+  export let disk;
+</script>
+
 <!-- 
 PROPS:
 
-{LOCATION: COUNTRY FLAG, COUNTRY NAME  => [IMG, TEXT]
-SERVER: QTY OF SERVERS => (NUMBER)} /fetch
-
+[TITLE: SERVER TYPE  => (STRING)
+CONTENT: INFORMATION => (HTML)] fetch
 
  -->
-<script>
-  export let location;
-</script>
 
 <div class="card-wrapper">
-  <div class="location">
-    <img
-      width="58"
-      height="83"
-      src="./img/{location.country}.svg"
-      alt="server located in {location.country} "
-    />
-    <h4 class="country">{location.country}</h4>
+  <div class="disk">
+    <h2>
+      {disk.size}
+    </h2>
   </div>
 
   <div class="server-number">
-    {#each Array(location.serverNumber) as _, i}
-      <h3 class="serverNumber bold">{i + 1}</h3>
-    {/each}
+    <h4 class="serverNumber">{disk.cost}$/Mo</h4>
   </div>
 </div>
 
@@ -39,7 +34,11 @@ SERVER: QTY OF SERVERS => (NUMBER)} /fetch
     border-radius: 20px;
     border: solid 4px $blue;
 
-    .location {
+    h4 span {
+      color: $greyMedium;
+    }
+
+    .disk {
       padding-top: 10px;
       padding-bottom: 14px;
       display: flex;

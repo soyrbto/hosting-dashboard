@@ -10,9 +10,13 @@
 </script>
 
 {#if loaded}
-  <Desktop />
+  <main>
+    <Desktop />
+  </main>
 {/if}
 
 <style lang="scss">
-  // some styles
+  main {
+    background-color: $blueBackground;
+  }
 </style>
