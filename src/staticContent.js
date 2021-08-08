@@ -36,12 +36,12 @@ dashboard = {
 
 cloudServer = {
   title: 'Cloud servers',
-  noServerM: 'You are just one click away from starting your first project',
+  noServer: 'You are just one click away from starting your first project',
 };
 
 dedicatedServer = {
   title: 'dedicated servers',
-  noServerM: 'You are just one click away from starting your first project',
+  noServer: 'You are just one click away from starting your first project',
 };
 
 dedicatedOrder = {
@@ -149,65 +149,65 @@ support = {
 };
 
 dedicatedTable = [
-  {
-    label: 'label 1',
-    system: 'linux001',
-    price: '150$',
-    location: 'Spain',
-    status: true,
-  },
-  {
-    label: 'label 2',
-    system: 'linux002',
-    price: '250$',
-    location: 'Sweden',
-    status: false,
-  },
-  {
-    label: 'label 3',
-    system: 'linux003',
-    price: '410$',
-    location: 'Russia',
-    status: true,
-  },
-  {
-    label: 'label 4',
-    system: 'linux004',
-    price: '160$',
-    location: 'India',
-    status: true,
-  },
+  // {
+  //   label: 'label 1',
+  //   system: 'linux001',
+  //   price: '150$',
+  //   location: 'Spain',
+  //   status: true,
+  // },
+  // {
+  //   label: 'label 2',
+  //   system: 'linux002',
+  //   price: '250$',
+  //   location: 'Sweden',
+  //   status: false,
+  // },
+  // {
+  //   label: 'label 3',
+  //   system: 'linux003',
+  //   price: '410$',
+  //   location: 'Russia',
+  //   status: true,
+  // },
+  // {
+  //   label: 'label 4',
+  //   system: 'linux004',
+  //   price: '160$',
+  //   location: 'India',
+  //   status: true,
+  // },
 ];
 
 cloudTable = [
-  {
-    label: 'label 1',
-    system: 'linux001',
-    price: '150$',
-    location: 'Spain',
-    status: true,
-  },
-  {
-    label: 'label 2',
-    system: 'linux002',
-    price: '250$',
-    location: 'Sweden',
-    status: false,
-  },
-  {
-    label: 'label 3',
-    system: 'linux003',
-    price: '410$',
-    location: 'Russia',
-    status: true,
-  },
-  {
-    label: 'label 4',
-    system: 'linux004',
-    price: '160$',
-    location: 'India',
-    status: true,
-  },
+  // {
+  //   label: 'label 1',
+  //   system: 'linux001',
+  //   price: '150$',
+  //   location: 'Spain',
+  //   status: true,
+  // },
+  // {
+  //   label: 'label 2',
+  //   system: 'linux002',
+  //   price: '250$',
+  //   location: 'Sweden',
+  //   status: false,
+  // },
+  // {
+  //   label: 'label 3',
+  //   system: 'linux003',
+  //   price: '410$',
+  //   location: 'Russia',
+  //   status: true,
+  // },
+  // {
+  //   label: 'label 4',
+  //   system: 'linux004',
+  //   price: '160$',
+  //   location: 'India',
+  //   status: true,
+  // },
 ];
 
 const content = {

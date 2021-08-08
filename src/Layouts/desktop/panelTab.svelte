@@ -9,7 +9,7 @@
   const dispatch = createEventDispatcher();
 
   function changeTab(tab) {
-    tabState.set(() => {
+    tabState.update((states) => {
       states = [false, false, false];
       states[tab] = true;
       return states;

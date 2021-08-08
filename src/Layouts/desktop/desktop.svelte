@@ -3,10 +3,10 @@
   import PanelTab from './panelTab.svelte';
   import Dashboard from './dashboard.svelte';
   import CloudOrder from './cloudOrder.svelte';
-  import DedicatedOrder from './dedicatedOrder.svelte';
+  import DedicatedServer from './dedicatedServer.svelte';
 
-  let tabs = [Dashboard, CloudOrder, DedicatedOrder];
-  let selectedTab;
+  let tabs = [Dashboard, CloudOrder, DedicatedServer];
+  let selectedTab = 2;
 
   //   prop:
   // account name: string / fetch => store
