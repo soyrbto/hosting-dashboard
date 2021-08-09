@@ -1,6 +1,7 @@
 <script>
   import Promotions from '../../components/promotions.svelte';
   import Notification from '../../components/notification.svelte';
+  import Renewal from '../../components/renewals.svelte';
   export let name = 'sergio';
 </script>
 
@@ -10,8 +11,12 @@
   <Promotions />
 
   <div class="information">
-    <Notification />
-    <!-- pending renewal -->
+    <div class="notification-wrapper">
+      <Notification />
+    </div>
+    <div class="renewal-wrapper">
+      <Renewal />
+    </div>
   </div>
   <!--  -->
 </div>
@@ -26,8 +31,8 @@
 
     .information {
       display: flex;
-
       margin-top: 80px;
+      justify-content: space-between;
     }
   }
 </style>
