@@ -33,7 +33,7 @@ dashboard = {
   },
 
   notification: {
-    title: 'notification',
+    title: 'Notification',
     content:
       'Lorem ipsum dolor sit amet consectetur adipiscing elit, magnis sociis metus eros ornare laoreet vestibulum ut, tempus dui curabitur dis congue sodales.',
   },

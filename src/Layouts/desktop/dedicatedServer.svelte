@@ -4,8 +4,6 @@
 
   let table = c.dedicatedTable;
   let content = c.dedicatedServer;
-
-  console.log(table.length);
 </script>
 
 <div class="dedicated-wrapper">
