@@ -20,14 +20,19 @@ panelTab = {
 
 dashboard = {
   welcomeM: 'Welcome to the control panel',
-  pendingT: 'pending renewal',
-  pendingC:
-    'Lorem ipsum dolor sit amet consectetur adipiscing elit, congue sodales.',
-  promotionT: 'Stay tuned!',
-  promotionC:
-    'keep an aye on the dashboard and the email to get to know our latest promotions',
+  promotion: {
+    title: 'Stay tuned!',
+    content:
+      'keep an aye on the dashboard and the email to get to know our latest promotions',
+  },
 
-  Notification: {
+  renewal: {
+    title: 'pending renewal',
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipiscing elit, congue sodales.',
+  },
+
+  notification: {
     title: 'notification',
     content:
       'Lorem ipsum dolor sit amet consectetur adipiscing elit, magnis sociis metus eros ornare laoreet vestibulum ut, tempus dui curabitur dis congue sodales.',

@@ -1,11 +1,12 @@
 <script>
+  import Promotions from '../../components/promotions.svelte';
   export let name = 'sergio';
 </script>
 
 <div class="dashboard-wrapper">
   <h1>Hi {name}! welcome to the control panel</h1>
 
-  <!-- promotion card -->
+  <Promotions />
 
   <div class="information">
     <!-- notification -->
