@@ -3,7 +3,7 @@
 </script>
 
 <div class="dashboard-wrapper">
-  <h1>HI {name}! welcome to the control panel</h1>
+  <h1>Hi {name}! welcome to the control panel</h1>
 
   <!-- promotion card -->
 

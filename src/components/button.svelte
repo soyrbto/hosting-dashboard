@@ -19,7 +19,7 @@ function: what to do / static
 
 <style lang="scss">
   button {
-    background-color: var(blue);
+    background-color: var(--blue);
     padding: 6px 127px;
     border: none;
     border-radius: 6px;

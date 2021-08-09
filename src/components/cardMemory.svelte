@@ -32,11 +32,7 @@ CONTENT: INFORMATION => (HTML)] fetch
     align-items: center;
     width: 220px;
     border-radius: 20px;
-    border: solid 4px $blueLight;
-
-    h4 span {
-      color: $greyMedium;
-    }
+    border: solid 4px var(--blueLight);
 
     .disk {
       padding-top: 10px;
@@ -46,13 +42,9 @@ CONTENT: INFORMATION => (HTML)] fetch
       align-items: center;
       border-radius: 15px;
       width: 100%;
-      background-color: $blueLight;
+      background-color: var(--blueLight);
       background-color: #ebf3fe;
       margin-bottom: 27px;
-
-      img {
-        margin-bottom: 7px;
-      }
     }
 
     .server-number {
@@ -63,6 +55,6 @@ CONTENT: INFORMATION => (HTML)] fetch
   }
 
   .card-wrapper:hover {
-    border: solid 4px $blue;
+    border: solid 4px var(--blue);
   }
 </style>
