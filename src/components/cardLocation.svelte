@@ -37,7 +37,7 @@ SERVER: QTY OF SERVERS => (NUMBER)} /fetch
     align-items: center;
     width: 220px;
     border-radius: 20px;
-    border: solid 4px $blueLight;
+    border: solid 4px var(--blueLight);
 
     .location {
       padding-top: 10px;
@@ -47,7 +47,7 @@ SERVER: QTY OF SERVERS => (NUMBER)} /fetch
       align-items: center;
       border-radius: 15px;
       width: 100%;
-      background-color: $blueLight;
+      background-color: var(--blueLight);
       background-color: #ebf3fe;
       margin-bottom: 27px;
 
@@ -64,6 +64,6 @@ SERVER: QTY OF SERVERS => (NUMBER)} /fetch
   }
 
   .card-wrapper:hover {
-    border: solid 4px $blue;
+    border: solid 4px var(--blue);
   }
 </style>

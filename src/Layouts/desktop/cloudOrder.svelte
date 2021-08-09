@@ -78,7 +78,7 @@
 
       input {
         padding-left: 10px;
-        border: solid $blueLight 2px;
+        border: solid var(--blueLight) 2px;
         background-color: white;
         border-radius: 5px;
         height: 40px;
@@ -95,7 +95,7 @@
     }
 
     h4 {
-      color: $blue;
+      color: var(--blue);
     }
 
     p {
@@ -110,10 +110,6 @@
         margin-right: 65px;
         margin-bottom: 55px;
       }
-    }
-
-    .main-wrapper {
-      padding-left: 380px;
     }
 
     .location-wrapper {

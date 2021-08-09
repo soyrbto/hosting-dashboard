@@ -18,21 +18,13 @@
     display: flex;
     height: 104px;
 
-    .container-logo {
-      background-color: white;
-      display: flex;
-      align-items: center;
-      width: 380px;
-      padding-left: 25px;
-    }
-
     .container-user {
       display: flex;
       align-items: center;
       justify-content: flex-end;
       width: 1540px;
       padding-right: 25px;
-      background-color: $blueBackground;
+      background-color: var(--blueBackground);
 
       h4 {
         padding-right: 10px;

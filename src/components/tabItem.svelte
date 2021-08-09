@@ -38,13 +38,13 @@
       width: 340px;
       border-radius: 10px;
       background-color: white;
-      color: $greyLightMedium;
+      color: var(--greyLightMedium);
       padding: 22px 0 22px 10px;
     }
 
     .vertical-line {
       width: 4px;
-      background-color: $blue;
+      background-color: var(--blue);
       visibility: hidden;
     }
   }
@@ -53,8 +53,8 @@
     cursor: default;
 
     .tab-item {
-      color: $blue;
-      background-color: $blueLight;
+      color: var(--blue);
+      background-color: var(--blueLight);
     }
 
     .vertical-line {
