@@ -30,14 +30,12 @@
   .main-wrapper {
     cursor: pointer;
     height: 74px;
-    width: 360px;
     display: flex;
     justify-content: space-between;
 
     .tab-item {
-      width: 340px;
+      width: 100%;
       border-radius: 10px;
-      background-color: white;
       color: var(--greyLightMedium);
       padding: 22px 0 22px 10px;
     }

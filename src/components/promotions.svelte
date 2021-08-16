@@ -39,10 +39,9 @@
       'content image'
       'button image';
 
-    padding: 53px 60px 80px 60px;
+    padding: flexUnit(53px) flexUnit(60px) flexUnit(80px) flexUnit(60px);
     background-color: white;
     border-radius: 20px;
-    width: 1360px;
 
     h1 {
       grid-area: title;
@@ -50,15 +49,19 @@
 
     h4 {
       grid-area: content;
+      max-width: flexUnit(500px);
     }
 
     .button-wrapper {
+      width: flexUnit(174px);
+      height: flexUnit(57px);
       display: flex;
-      align-items: flex-end;
+      align-self: flex-end;
       grid-area: button;
     }
 
     img {
+      width: 100%;
       justify-self: end;
       grid-area: image;
     }

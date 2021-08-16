@@ -28,20 +28,19 @@
 <style lang="scss">
   .card-wrapper {
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    column-gap: 25px;
-    grid-template-rows: 60px 60px 60px;
-    row-gap: 15px;
+    grid-template-columns: flexUnit(174px) auto;
+    column-gap: flexUnit(25px);
+    grid-template-rows: flexUnit(60px) flexUnit(60px) flexUnit(60px);
+    row-gap: flexUnit(15px);
     grid-template-areas:
       'title title'
       'content content'
       'button close';
 
-    padding: 34px;
-    padding-left: 60px;
+    padding: flexUnit(34px);
+    padding-left: flexUnit(60px);
     background-color: white;
-    border-radius: 20px;
-    width: 720px;
+    border-radius: flexUnit(20px);
 
     h1 {
       grid-area: title;
@@ -52,6 +51,7 @@
     }
 
     .cta-wrapper {
+      max-width: flexUnit(174px);
       grid-area: button;
     }
 

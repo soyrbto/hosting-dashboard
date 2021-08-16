@@ -43,12 +43,14 @@
 
 <style lang="scss">
   aside {
-    padding-left: 20px;
     padding-top: 16px;
     background-color: white;
-    width: 380px;
 
     .fixed-container {
+      padding-left: 20px;
+      height: 100vh;
+      background-color: white;
+      width: 20%;
       position: fixed;
     }
 

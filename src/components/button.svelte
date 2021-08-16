@@ -19,8 +19,10 @@ function: what to do / static
 
 <style lang="scss">
   button {
+    width: 100%;
+    height: 100%;
     background-color: var(--blue);
-    padding: 6px 127px;
+    padding: flexUnit(6px) flexUnit(32px);
     border: none;
     border-radius: 6px;
     color: white;

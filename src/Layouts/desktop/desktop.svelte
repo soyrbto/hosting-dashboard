@@ -6,18 +6,20 @@
   import DedicatedServer from './dedicatedServer.svelte';
 
   let tabs = [Dashboard, CloudOrder, DedicatedServer];
-  let selectedTab = 2;
+  let selectedTab = 0;
 
   //   prop:
   // account name: string / fetch => store
 </script>
 
 <main>
-  <PanelTab
-    on:changeComp={(e) => {
-      selectedTab = e.detail;
-    }}
-  />
+  <div class="panel-tab">
+    <PanelTab
+      on:changeComp={(e) => {
+        selectedTab = e.detail;
+      }}
+    />
+  </div>
   <div class="main-wrapper">
     <Header />
     <svelte:component this={tabs[selectedTab]} />
@@ -28,7 +30,13 @@
   main {
     display: flex;
 
+    .panel-tab {
+      width: 20%;
+      background-color: white;
+    }
+
     .main-wrapper {
+      width: 80%;
       display: flex;
       flex-direction: column;
     }

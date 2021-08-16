@@ -23,15 +23,35 @@
 
 <style lang="scss">
   .dashboard-wrapper {
-    padding: 32px 77px 90px;
+    padding: flexUnit(32px) flexUnit(77px) flexUnit(90px);
 
     h1 {
-      margin-bottom: 70px;
+      margin-bottom: flexUnit(70px);
+    }
+
+    @media only screen and (max-width: 1854px) {
+      .notification-wrapper {
+        margin-bottom: flexUnit(70px);
+        min-width: 100%;
+      }
+
+      .renewal-wrapper {
+        min-width: 100%;
+      }
+    }
+    .notification-wrapper {
+      max-width: flexUnit(720px);
+    }
+
+    .renewal-wrapper {
+      max-width: flexUnit(450px);
     }
 
     .information {
       display: flex;
-      margin-top: 80px;
+      align-items: stretch;
+      flex-wrap: wrap;
+      margin-top: flexUnit(80px);
       justify-content: space-between;
     }
   }

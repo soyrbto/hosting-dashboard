@@ -24,18 +24,24 @@
 
 <style lang="scss">
   .card-wrapper {
+    height: 100%;
+    // min-height: flexUnit(278px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
-    padding: 34px;
-    padding-left: 60px;
+    justify-content: space-between;
+    padding: flexUnit(34px);
+    padding-left: flexUnit(60px);
     background-color: white;
-    border-radius: 20px;
-    width: 550px;
+    border-radius: flexUnit(20px);
 
     & > * {
-      margin-bottom: 15px;
+      margin-bottom: flexUnit(15px);
+    }
+
+    .cta-wrapper {
+      align-self: flex-end;
+      height: flexUnit(57px);
+      width: flexUnit(174px);
     }
   }
 </style>
