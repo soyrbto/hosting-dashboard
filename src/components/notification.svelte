@@ -30,11 +30,11 @@
     display: grid;
     grid-template-columns: flexUnit(174px) auto;
     column-gap: flexUnit(25px);
-    grid-template-rows: flexUnit(60px) flexUnit(60px) flexUnit(60px);
+    grid-template-rows: auto auto auto;
     row-gap: flexUnit(15px);
     grid-template-areas:
       'title title'
-      'content content'
+      'text text'
       'button close';
 
     padding: flexUnit(34px);
@@ -47,15 +47,18 @@
     }
 
     h4 {
-      grid-area: content;
+      height: fit-content;
+      grid-area: text;
     }
 
     .cta-wrapper {
+      height: flexUnit(57px);
       max-width: flexUnit(174px);
       grid-area: button;
     }
 
     .close-wrapper {
+      height: flexUnit(57px);
       justify-self: start;
       grid-area: close;
     }

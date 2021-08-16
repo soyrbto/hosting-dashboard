@@ -69,6 +69,7 @@
 
   @media only screen and (max-width: 1100px) {
     .card-wrapper {
+      padding: flexUnitM(30px) flexUnitM(15px);
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 5fr 1fr 1fr;
       grid-template-areas:
@@ -76,6 +77,10 @@
         'image'
         'content'
         'button';
+    }
+
+    .button-wrapper {
+      justify-self: center;
     }
   }
 </style>
