@@ -18,7 +18,7 @@
   <h1 class="title">{renewal.title}</h1>
   <h4 class="content">{renewal.content}</h4>
   <div class="cta-wrapper">
-    <Button />
+    <Button secundary={true} />
   </div>
 </div>
 
@@ -34,8 +34,8 @@
     background-color: white;
     border-radius: flexUnit(20px);
 
-    & + * {
-      margin-bottom: flexUnit(15px);
+    * + * {
+      margin-top: flexUnit(15px);
     }
 
     .cta-wrapper {

@@ -66,4 +66,16 @@
       grid-area: image;
     }
   }
+
+  @media only screen and (max-width: 1100px) {
+    .card-wrapper {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 5fr 1fr 1fr;
+      grid-template-areas:
+        'title'
+        'image'
+        'content'
+        'button';
+    }
+  }
 </style>

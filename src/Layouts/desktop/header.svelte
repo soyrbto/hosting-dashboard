@@ -26,6 +26,10 @@
       padding-right: flexUnit(25px);
       background-color: var(--blueBackground);
 
+      img {
+        cursor: pointer;
+      }
+
       h4 {
         padding-right: flexUnit(10px);
       }

@@ -21,7 +21,7 @@
     <Button />
   </div>
   <div class="close-wrapper">
-    <Button />
+    <Button secundary={true} content={'Close'} />
   </div>
 </div>
 
@@ -56,7 +56,6 @@
     }
 
     .close-wrapper {
-      align-items: flex-end;
       justify-self: start;
       grid-area: close;
     }
