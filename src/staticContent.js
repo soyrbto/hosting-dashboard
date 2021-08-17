@@ -15,7 +15,7 @@ let panelTab,
 
 panelTab = {
   top: ['Dashboard', 'Cloud server', 'Dedicated server'],
-  bottom: ['account', 'support'],
+  bottom: ['Account', 'Support'],
 };
 
 dashboard = {
@@ -27,7 +27,7 @@ dashboard = {
   },
 
   renewal: {
-    title: 'pending renewal',
+    title: 'Pending renewal',
     content:
       'Lorem ipsum dolor sit amet consectetur adipiscing elit, congue sodales.',
   },
@@ -45,7 +45,7 @@ cloudServer = {
 };
 
 dedicatedServer = {
-  title: 'dedicated servers',
+  title: 'Dedicated servers',
   noServer: 'You are just one click away from starting your first project',
 };
 

@@ -1,7 +1,8 @@
 <script>
   import { createEventDispatcher } from 'svelte';
   export let itemName;
-  export let selected = 'true';
+  export let selected = false;
+  export let icon = false;
 
   const dispatch = createEventDispatcher();
 </script>
@@ -21,6 +22,15 @@
     dispatch('clicked');
   }}
 >
+  {#if icon}
+    <img
+      width="29"
+      height="29"
+      src="./img/{icon}.svg"
+      alt={icon == 'user' ? 'user settings' : 'support'}
+    />
+  {/if}
+
   <h3 class="tab-item">{itemName}</h3>
 
   <div class="vertical-line" />
@@ -32,6 +42,7 @@
     height: 74px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     .tab-item {
       width: 95%;
@@ -41,6 +52,7 @@
     }
 
     .vertical-line {
+      height: 100%;
       width: 4px;
       background-color: var(--blue);
       visibility: hidden;

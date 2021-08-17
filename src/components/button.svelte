@@ -24,7 +24,7 @@ function: what to do / static
     width: 100%;
     height: 100%;
     background-color: var(--blue);
-    padding: flexUnit(6px) flexUnit(32px);
+    padding: flexUnit(16px) flexUnit(32px);
     border: none;
     border-radius: 6px;
     color: white;

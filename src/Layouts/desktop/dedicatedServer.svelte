@@ -18,7 +18,7 @@
         {content.noServer}
       </h2>
       <div class="button-wrapper">
-        <Button />
+        <Button content={'get started with a cloud server'} />
       </div>
     </div>
   {/if}
@@ -26,6 +26,7 @@
 
 <style lang="scss">
   .dedicated-wrapper {
+    height: 100%;
     padding-top: 32px;
     padding-left: 91px;
     padding-bottom: 93px;
@@ -36,26 +37,28 @@
     }
 
     h1 {
-      margin-bottom: 107px;
+      margin-bottom: flexUnit(107px);
     }
 
     img {
       margin: 0 auto;
-      margin-bottom: 90px;
+      margin-bottom: flexUnit(90px);
     }
 
     .create-component {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 32px;
+      padding-top: flexUnit(32px);
 
       .create-text {
-        margin-bottom: 30px;
+        margin-bottom: flexUnit(30px);
+        text-align: center;
       }
 
       .button-wrapper {
-        width: 327px;
+        height: flexibleUnit(57px);
+        width: flexibleUnit(327px);
       }
     }
   }
