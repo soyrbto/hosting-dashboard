@@ -25,7 +25,7 @@
     src="./img/promotion.svg"
     alt="promotion banner"
     width="472"
-    height="285"
+    height="240"
   />
 </div>
 
@@ -33,7 +33,7 @@
   .card-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
     grid-template-areas:
       'title image'
       'content image'
@@ -49,7 +49,7 @@
 
     h4 {
       grid-area: content;
-      max-width: flexUnit(500px);
+      max-width: flexUnit(600px);
     }
 
     .button-wrapper {
@@ -61,7 +61,6 @@
     }
 
     img {
-      width: 100%;
       justify-self: end;
       grid-area: image;
     }

@@ -34,7 +34,7 @@
     justify-content: space-between;
 
     .tab-item {
-      width: 100%;
+      width: 95%;
       border-radius: 10px;
       color: var(--greyLightMedium);
       padding: 22px 0 22px 10px;

@@ -34,14 +34,14 @@
     background-color: white;
     border-radius: flexUnit(20px);
 
-    * + * {
-      margin-top: flexUnit(15px);
+    h1 {
+      margin-bottom: flexUnit(15px);
     }
 
     .cta-wrapper {
+      margin-top: flexUnit(34px);
       align-self: center;
       height: flexUnit(57px);
-      width: flexUnit(174px);
     }
   }
 </style>

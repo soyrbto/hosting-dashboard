@@ -30,7 +30,7 @@
     display: grid;
     grid-template-columns: flexUnit(174px) auto;
     column-gap: flexUnit(25px);
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 1fr 1fr 1fr;
     row-gap: flexUnit(15px);
     grid-template-areas:
       'title title'
