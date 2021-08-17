@@ -3,18 +3,26 @@
   import PanelTab from './panelTab.svelte';
   import Dashboard from './dashboard.svelte';
   import CloudOrder from './cloudOrder.svelte';
+  import DedicatedServer from './dedicatedServer.svelte';
 
-  let tab = CloudOrder;
+  let tabs = [Dashboard, CloudOrder, DedicatedServer];
+  let selectedTab = 0;
 
   //   prop:
   // account name: string / fetch => store
 </script>
 
 <main>
-  <PanelTab />
+  <div class="panel-tab">
+    <PanelTab
+      on:changeComp={(e) => {
+        selectedTab = e.detail;
+      }}
+    />
+  </div>
   <div class="main-wrapper">
     <Header />
-    <svelte:component this={tab} />
+    <svelte:component this={tabs[selectedTab]} />
   </div>
 </main>
 
@@ -22,7 +30,13 @@
   main {
     display: flex;
 
+    .panel-tab {
+      width: 20%;
+      background-color: white;
+    }
+
     .main-wrapper {
+      width: 80%;
       display: flex;
       flex-direction: column;
     }

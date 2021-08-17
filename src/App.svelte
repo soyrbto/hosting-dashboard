@@ -17,6 +17,6 @@
 
 <style lang="scss">
   main {
-    background-color: $blueBackground;
+    background-color: var(--blueBackground);
   }
 </style>

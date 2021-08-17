@@ -2,7 +2,7 @@
   import c from '../../staticContent';
   import CardLocation from '../../components/cardLocation.svelte';
   import CardModel from '../../components/cardModel.svelte';
-  import CardSize from '../../components/cardSize.svelte';
+  import CardSize from '../../components/cardMemory.svelte';
   import Button from '../../components/button.svelte';
 
   const content = c.cloudOrder;
@@ -78,7 +78,7 @@
 
       input {
         padding-left: 10px;
-        border: solid $blue 2px;
+        border: solid var(--blueLight) 2px;
         background-color: white;
         border-radius: 5px;
         height: 40px;
@@ -95,7 +95,7 @@
     }
 
     h4 {
-      color: $blue;
+      color: var(--blue);
     }
 
     p {
@@ -105,16 +105,11 @@
     .card-section {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      margin-bottom: 60px;
 
       .card-wrapper {
         margin-right: 65px;
         margin-bottom: 55px;
       }
-    }
-
-    .main-wrapper {
-      padding-left: 380px;
     }
 
     .location-wrapper {

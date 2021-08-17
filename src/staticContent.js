@@ -14,21 +14,26 @@ let panelTab,
   cloudSize;
 
 panelTab = {
-  top: ['Dashboard', 'cloud server', 'dedicated server'],
-  bottom: ['account', 'support'],
+  top: ['Dashboard', 'Cloud server', 'Dedicated server'],
+  bottom: ['Account', 'Support'],
 };
 
 dashboard = {
   welcomeM: 'Welcome to the control panel',
-  pendingT: 'pending renewal',
-  pendingC:
-    'Lorem ipsum dolor sit amet consectetur adipiscing elit, congue sodales.',
-  promotionT: 'Stay tuned!',
-  promotionC:
-    'keep an aye on the dashboard and the email to get to know our latest promotions',
+  promotion: {
+    title: 'Stay tuned!',
+    content:
+      'keep an aye on the dashboard and the email to get to know our latest promotions',
+  },
 
-  Notification: {
-    title: 'notification',
+  renewal: {
+    title: 'Pending renewal',
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipiscing elit, congue sodales.',
+  },
+
+  notification: {
+    title: 'Notification',
     content:
       'Lorem ipsum dolor sit amet consectetur adipiscing elit, magnis sociis metus eros ornare laoreet vestibulum ut, tempus dui curabitur dis congue sodales.',
   },
@@ -36,17 +41,17 @@ dashboard = {
 
 cloudServer = {
   title: 'Cloud servers',
-  noServerM: 'You are just one click away from starting your first project',
+  noServer: 'You are just one click away from starting your first project',
 };
 
 dedicatedServer = {
-  title: 'dedicated servers',
-  noServerM: 'You are just one click away from starting your first project',
+  title: 'Dedicated servers',
+  noServer: 'You are just one click away from starting your first project',
 };
 
 dedicatedOrder = {
   title: 'Dedicated server order',
-  labelT: 'label',
+  labelT: 'Label',
   locationT: 'Select location',
   modelT: 'Select model',
   diskT: 'Select disk',
@@ -128,7 +133,7 @@ cloudSize = [
 
 cloudOrder = {
   title: 'Cloud server order',
-  labelT: 'label',
+  labelT: 'Label',
   locationT: 'Select location',
   modelT: 'Select model',
   diskT: 'Select disk',
@@ -149,65 +154,65 @@ support = {
 };
 
 dedicatedTable = [
-  {
-    label: 'label 1',
-    system: 'linux001',
-    price: '150$',
-    location: 'Spain',
-    status: true,
-  },
-  {
-    label: 'label 2',
-    system: 'linux002',
-    price: '250$',
-    location: 'Sweden',
-    status: false,
-  },
-  {
-    label: 'label 3',
-    system: 'linux003',
-    price: '410$',
-    location: 'Russia',
-    status: true,
-  },
-  {
-    label: 'label 4',
-    system: 'linux004',
-    price: '160$',
-    location: 'India',
-    status: true,
-  },
+  // {
+  //   label: 'label 1',
+  //   system: 'linux001',
+  //   price: '150$',
+  //   location: 'Spain',
+  //   status: true,
+  // },
+  // {
+  //   label: 'label 2',
+  //   system: 'linux002',
+  //   price: '250$',
+  //   location: 'Sweden',
+  //   status: false,
+  // },
+  // {
+  //   label: 'label 3',
+  //   system: 'linux003',
+  //   price: '410$',
+  //   location: 'Russia',
+  //   status: true,
+  // },
+  // {
+  //   label: 'label 4',
+  //   system: 'linux004',
+  //   price: '160$',
+  //   location: 'India',
+  //   status: true,
+  // },
 ];
 
 cloudTable = [
-  {
-    label: 'label 1',
-    system: 'linux001',
-    price: '150$',
-    location: 'Spain',
-    status: true,
-  },
-  {
-    label: 'label 2',
-    system: 'linux002',
-    price: '250$',
-    location: 'Sweden',
-    status: false,
-  },
-  {
-    label: 'label 3',
-    system: 'linux003',
-    price: '410$',
-    location: 'Russia',
-    status: true,
-  },
-  {
-    label: 'label 4',
-    system: 'linux004',
-    price: '160$',
-    location: 'India',
-    status: true,
-  },
+  // {
+  //   label: 'label 1',
+  //   system: 'linux001',
+  //   price: '150$',
+  //   location: 'Spain',
+  //   status: true,
+  // },
+  // {
+  //   label: 'label 2',
+  //   system: 'linux002',
+  //   price: '250$',
+  //   location: 'Sweden',
+  //   status: false,
+  // },
+  // {
+  //   label: 'label 3',
+  //   system: 'linux003',
+  //   price: '410$',
+  //   location: 'Russia',
+  //   status: true,
+  // },
+  // {
+  //   label: 'label 4',
+  //   system: 'linux004',
+  //   price: '160$',
+  //   location: 'India',
+  //   status: true,
+  // },
 ];
 
 const content = {

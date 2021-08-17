@@ -1,6 +1,25 @@
 /*DO NOT TOUCH THE RESET*/ 
+
+:root{
+  /* // color font */
+
+--blue: #3F8CFE;
+--greyLight:  #BCBCBC;
+--greyLightMedium: #858282;
+--greyMedium: #5E5E5E;
+--greyDark:  #313030;
+--greenActive:  #0FB652;
+--redInactive: #F03738;
+
+/* // color background */
+
+--blueBackground: #F3F8FC;
+--blueLight: #EBF3FE;
+--blueDark:  #096CFF;
+}
  
 html { 
+  font-size: 70%;
   height: 100%; 
 } 
  
@@ -46,6 +65,8 @@ line-height: 1.5;
 body::-webkit-scrollbar { 
   display: none; 
 }
+
+/* ============= variables ================ */
 
 
 

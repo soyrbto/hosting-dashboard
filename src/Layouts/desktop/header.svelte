@@ -13,29 +13,25 @@
 
 <style lang="scss">
   header {
-    width: 1540px;
+    width: 100%;
     justify-content: flex-end;
     display: flex;
-    height: 104px;
-
-    .container-logo {
-      background-color: white;
-      display: flex;
-      align-items: center;
-      width: 380px;
-      padding-left: 25px;
-    }
+    height: flexUnit(104px);
 
     .container-user {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      width: 1540px;
-      padding-right: 25px;
-      background-color: $blueBackground;
+      width: 100%;
+      padding-right: flexUnit(25px);
+      background-color: var(--blueBackground);
+
+      img {
+        cursor: pointer;
+      }
 
       h4 {
-        padding-right: 10px;
+        padding-right: flexUnit(10px);
       }
     }
   }
@@ -45,8 +41,8 @@
     justify-content: flex-end;
 
     .line {
-      margin-right: 30px;
-      width: 1480px;
+      margin-right: flexUnit(30px);
+      width: 95%;
       height: 1px;
       background-color: #7c838b;
     }

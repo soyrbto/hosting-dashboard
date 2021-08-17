@@ -1,5 +1,6 @@
 <script>
-  //some logic
+  export let secundary = false;
+  export let content = 'call To action';
 </script>
 
 <!-- 
@@ -13,16 +14,24 @@ function: what to do / static
 
  -->
 
-<button>
-  <h4 class="bold">Call to Action</h4>
+<button class:secundary>
+  <h4 class="bold">{content}</h4>
 </button>
 
 <style lang="scss">
   button {
-    background-color: $blue;
-    padding: 6px 127px;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-color: var(--blue);
+    padding: flexUnit(16px) flexUnit(32px);
     border: none;
     border-radius: 6px;
     color: white;
+  }
+  .secundary {
+    color: var(--blue);
+    background-color: white;
+    border: 1px solid var(--blue);
   }
 </style>

@@ -1,6 +1,10 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
   export let itemName;
-  export let selected = 'true';
+  export let selected = false;
+  export let icon = false;
+
+  const dispatch = createEventDispatcher();
 </script>
 
 <!-- 
@@ -11,7 +15,22 @@
         STATE: BOOLEAN / STATIC
  -->
 
-<div class="main-wrapper" class:selected>
+<div
+  class="main-wrapper"
+  class:selected
+  on:click={() => {
+    dispatch('clicked');
+  }}
+>
+  {#if icon}
+    <img
+      width="29"
+      height="29"
+      src="./img/{icon}.svg"
+      alt={icon == 'user' ? 'user settings' : 'support'}
+    />
+  {/if}
+
   <h3 class="tab-item">{itemName}</h3>
 
   <div class="vertical-line" />
@@ -19,30 +38,33 @@
 
 <style lang="scss">
   .main-wrapper {
+    cursor: pointer;
     height: 74px;
-    width: 360px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     .tab-item {
-      width: 340px;
+      width: 95%;
       border-radius: 10px;
-      background-color: white;
-      color: $greyLightMedium;
+      color: var(--greyLightMedium);
       padding: 22px 0 22px 10px;
     }
 
     .vertical-line {
+      height: 100%;
       width: 4px;
-      background-color: $blue;
+      background-color: var(--blue);
       visibility: hidden;
     }
   }
 
   .selected {
+    cursor: default;
+
     .tab-item {
-      color: $blue;
-      background-color: $blueLight;
+      color: var(--blue);
+      background-color: var(--blueLight);
     }
 
     .vertical-line {
