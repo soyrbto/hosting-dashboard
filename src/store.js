@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 
-const tabState = writable([true, false, false]);
+const tabState = writable([false, true, false]);
 
 let states = {
   tabState: tabState,
