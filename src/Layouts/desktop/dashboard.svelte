@@ -23,7 +23,7 @@
 
 <style lang="scss">
   .dashboard-wrapper {
-    padding: flexUnit(32px) flexUnit(77px) flexUnit(90px);
+    padding: flexUnit(32px) flexUnit(90px) flexUnit(77px) flexUnit(90px);
 
     h1 {
       margin-bottom: flexUnit(70px);
@@ -44,7 +44,7 @@
     }
 
     .renewal-wrapper {
-      max-width: flexUnit(450px);
+      max-width: flexUnit(550px);
     }
 
     .information {
