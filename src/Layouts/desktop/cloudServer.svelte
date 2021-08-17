@@ -23,16 +23,29 @@
       </div>
     </div>
   {/if}
+  <div class="create-server">
+    <Button content={'Create Server'} />
+  </div>
 
   <ServerTable content={table} />
 </div>
 
 <style lang="scss">
   .cloud-wrapper {
+    display: flex;
     height: 100%;
     padding-top: 32px;
     padding-left: 91px;
+    padding-right: 40px;
     padding-bottom: 93px;
+    flex-direction: column;
+
+    .create-server {
+      align-self: flex-end;
+      margin-bottom: 40px;
+      width: flexUnit(206px);
+      //   height: flexUnit(37px);
+    }
 
     .img-wrapper {
       display: flex;

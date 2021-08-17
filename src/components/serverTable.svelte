@@ -13,6 +13,7 @@
         <th class="icons">
           <h3>actions</h3>
         </th>
+        <th />
       </tr>
     </thead>
     <tbody>
@@ -25,15 +26,15 @@
           <td>{content.price}</td>
           <td>{content.location}</td>
           <td class={content.status ? 'active' : 'inactive'}
-            >{content.status ? 'active' : 'inactive'}</td
+            >{content.status ? 'Active' : 'Inactive'}</td
           >
           <td>
             <img src="./img/stopIcon.svg" alt="stop server" />
             <img src="./img/restartIcon.svg" alt="restart server" />
             <img src="./img/reinstallIcon.svg" alt="reinstall server" /></td
           >
-        </tr>
-      {/each}
+          <td><img src="./img/detailsIcon.svg" alt="details button" /></td>
+        </tr>{/each}
     </tbody>
   </table>
 </div>
@@ -68,7 +69,7 @@
   .container {
     text-align: left;
     overflow: hidden;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     display: table;
 

@@ -17,7 +17,6 @@
 
 <style lang="scss">
   main {
-    height: 100vh;
     background-color: var(--blueBackground);
   }
 </style>

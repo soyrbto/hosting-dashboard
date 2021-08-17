@@ -28,10 +28,19 @@ function: what to do / static
     border: none;
     border-radius: 6px;
     color: white;
+    box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.08),
+      0px 4px 8px rgba(44, 39, 56, 0.1);
+
+    &:active {
+      box-shadow: none;
+      transition: all ease-in-out;
+    }
   }
+
   .secundary {
     color: var(--blue);
     background-color: white;
     border: 1px solid var(--blue);
+    box-shadow: none;
   }
 </style>
