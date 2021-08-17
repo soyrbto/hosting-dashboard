@@ -20,6 +20,7 @@ function: what to do / static
 
 <style lang="scss">
   button {
+    cursor: pointer;
     width: 100%;
     height: 100%;
     background-color: var(--blue);

@@ -76,6 +76,11 @@
         'image'
         'content'
         'button';
+
+      img {
+        width: 100%;
+        justify-self: center !important;
+      }
     }
 
     .button-wrapper {
