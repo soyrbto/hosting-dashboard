@@ -59,11 +59,11 @@
           <span> 192.256.65.1 </span>
         </div>
         <div>
-          Root Password
+          Password
           <span> <input type="password" /> </span>
         </div>
         <div>
-          Operating System
+          OS
           <span> Linux 001 </span>
         </div>
         <div class="button-wrapper">
