@@ -6,8 +6,9 @@
 <div class="main-wrapper">
   <h1>Account Information</h1>
 
-  <div class="formAccount-wrapper" />
-  <FormAccount />
+  <div class="formAccount-wrapper">
+    <FormAccount />
+  </div>
 
   <div class="formPassword-wrapper">
     <FormPassword />
@@ -19,6 +20,10 @@
     display: flex;
     padding: 32px 90px 75px;
     flex-direction: column;
+
+    .formAccount-wrapper {
+      margin-bottom: 45px;
+    }
 
     h1 {
       margin-top: 32px;
