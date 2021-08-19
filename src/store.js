@@ -16,8 +16,8 @@ const sections = {
   5: DedicatedOrder,
 };
 
-const tabState = writable([true, false, false, false]);
-const activeSection = writable(Dashboard);
+const tabState = writable([false, false, false, true]);
+const activeSection = writable(Account);
 
 function changeSection(sectionIndex) {
   activeSection.set(sections[sectionIndex]);
