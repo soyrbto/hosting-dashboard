@@ -19,7 +19,7 @@
   </form>
   <div class="buttons">
     <div class="update-wrapper">
-      <Button content={'Update'} />
+      <Button content={'Update'} disable={true} />
     </div>
   </div>
 </div>

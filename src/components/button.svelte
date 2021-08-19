@@ -2,6 +2,7 @@
   export let handleClick = () => {
     console.log("I don't do anything yet");
   };
+  export let disable = false;
   export let secundary = false;
   export let content = 'call To action';
   export let padding = '';
@@ -19,6 +20,7 @@ function: what to do / static
  -->
 
 <button
+  class:disable
   class:secundary
   style="padding: {padding};"
   on:click={() => handleClick()}
@@ -48,5 +50,9 @@ function: what to do / static
     background-color: white;
     border: 1px solid var(--blue);
     box-shadow: none;
+  }
+
+  .disable {
+    background-color: #c9c9c9;
   }
 </style>

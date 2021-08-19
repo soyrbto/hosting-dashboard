@@ -39,10 +39,10 @@
     <div class="field">
       <div class="buttons">
         <div class="edit-wrapper">
-          <Button content={'edit'} />
+          <Button content={'Edit'} />
         </div>
         <div class="save-wrapper">
-          <Button secundary={true} content={'save'} />
+          <Button secundary={true} content={'Save'} />
         </div>
       </div>
     </div>
