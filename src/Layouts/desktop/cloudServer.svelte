@@ -1,10 +1,15 @@
 <script>
+  import { changeSection } from '../../store';
   import Button from '../../components/button.svelte';
   import c from '../../staticContent';
   import ServerTable from '../../components/serverTable.svelte';
 
   let table = c.cloudTable;
   let content = c.cloudServer;
+
+  function handleClick() {
+    changeSection(4);
+  }
 </script>
 
 <div class="cloud-wrapper">
@@ -24,7 +29,7 @@
     </div>
   {/if}
   <div class="create-server">
-    <Button content={'Create Server'} />
+    <Button content={'Create Server'} {handleClick} />
   </div>
 
   <ServerTable content={table} />

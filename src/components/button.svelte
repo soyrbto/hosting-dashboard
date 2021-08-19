@@ -1,4 +1,7 @@
 <script>
+  export let handleClick = () => {
+    console.log("I don't do anything yet");
+  };
   export let secundary = false;
   export let content = 'call To action';
   export let padding = '';
@@ -15,7 +18,11 @@ function: what to do / static
 
  -->
 
-<button class:secundary style="padding: {padding};">
+<button
+  class:secundary
+  style="padding: {padding};"
+  on:click={() => handleClick()}
+>
   <h4 class="bold">{content}</h4>
 </button>
 

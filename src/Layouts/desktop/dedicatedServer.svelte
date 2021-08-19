@@ -1,9 +1,14 @@
 <script>
   import Button from '../../components/button.svelte';
   import c from '../../staticContent';
+  import { changeSection } from '../../store';
 
   let table = c.dedicatedTable;
   let content = c.dedicatedServer;
+
+  function handleClick() {
+    changeSection(5);
+  }
 </script>
 
 <div class="dedicated-wrapper">
@@ -18,7 +23,7 @@
         {content.noServer}
       </h2>
       <div class="button-wrapper">
-        <Button content={'get started with a cloud server'} />
+        <Button content={'get started with a cloud server'} {handleClick} />
       </div>
     </div>
   {/if}
