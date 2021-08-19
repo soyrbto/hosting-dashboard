@@ -1,12 +1,8 @@
 <script>
+  import { activeSection } from '../../store';
+
   import Header from './header.svelte';
   import PanelTab from './panelTab.svelte';
-  import Dashboard from './dashboard.svelte';
-  import CloudOrder from './cloudOrder.svelte';
-  import DedicatedServer from './dedicatedServer.svelte';
-
-  let tabs = [Dashboard, CloudOrder, DedicatedServer];
-  let selectedTab = 0;
 
   //   prop:
   // account name: string / fetch => store
@@ -14,15 +10,11 @@
 
 <main>
   <div class="panel-tab">
-    <PanelTab
-      on:changeComp={(e) => {
-        selectedTab = e.detail;
-      }}
-    />
+    <PanelTab />
   </div>
   <div class="main-wrapper">
     <Header />
-    <svelte:component this={tabs[selectedTab]} />
+    <svelte:component this={$activeSection} />
   </div>
 </main>
 
@@ -36,6 +28,7 @@
     }
 
     .main-wrapper {
+      min-height: 100vh;
       width: 80%;
       display: flex;
       flex-direction: column;

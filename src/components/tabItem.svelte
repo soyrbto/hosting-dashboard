@@ -5,15 +5,17 @@
   export let icon = false;
 
   const dispatch = createEventDispatcher();
-</script>
 
-<!-- 
-        PROP: 
-        CONTENT: STRING / STATIC
-        ICON: BOOLEAN / STATIC
-        IMAGE: URL / STATIC
-        STATE: BOOLEAN / STATIC
- -->
+  function handleImageName(rawName) {
+    let imageName;
+    if (icon) {
+      imageName = rawName.replace(' ', '-').toLowerCase();
+      return imageName;
+    } else {
+      return false;
+    }
+  }
+</script>
 
 <div
   class="main-wrapper"
@@ -26,7 +28,7 @@
     <img
       width="29"
       height="29"
-      src="./img/{icon}.svg"
+      src="./img/{handleImageName(icon)}.svg"
       alt={icon == 'user' ? 'user settings' : 'support'}
     />
   {/if}
@@ -43,12 +45,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 10px;
+
+    img {
+      margin-left: 13px;
+    }
 
     .tab-item {
-      width: 95%;
-      border-radius: 10px;
-      color: var(--greyLightMedium);
       padding: 22px 0 22px 10px;
+      width: 95%;
+      color: var(--greyLightMedium);
     }
 
     .vertical-line {
@@ -60,11 +66,12 @@
   }
 
   .selected {
+    transition: all 500ms ease-in-out;
     cursor: default;
+    background-color: var(--blueLight);
 
     .tab-item {
       color: var(--blue);
-      background-color: var(--blueLight);
     }
 
     .vertical-line {
