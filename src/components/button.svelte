@@ -5,6 +5,7 @@
   export let disable = false;
   export let secundary = false;
   export let content = 'call To action';
+  export let icon = false;
   export let padding = '';
 </script>
 
@@ -25,11 +26,17 @@ function: what to do / static
   style="padding: {padding};"
   on:click={() => handleClick()}
 >
+  {#if icon}
+    <img src="./img/{icon}.svg" alt="" />
+  {/if}
   <h4 class="bold">{content}</h4>
 </button>
 
 <style lang="scss">
   button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     background-color: var(--blue);
     padding: flexUnit(16px) flexUnit(32px);
@@ -38,6 +45,10 @@ function: what to do / static
     color: white;
     box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.08),
       0px 4px 8px rgba(44, 39, 56, 0.1);
+
+    img {
+      margin-right: 16px;
+    }
 
     &:active {
       box-shadow: none;

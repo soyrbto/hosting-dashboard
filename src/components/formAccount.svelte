@@ -21,7 +21,7 @@
       <select name="country" id="" />
     </div>
     <div class="field">
-      <label for=""> Country </label>
+      <label for=""> City </label>
       <select name="city" id="" />
     </div>
     <div class="field">
