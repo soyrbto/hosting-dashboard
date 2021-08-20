@@ -16,7 +16,7 @@
   <h1>{content.title}</h1>
   {#if table.length == 0}
     <div class="img-wrapper">
-      <img src="./img/no-server.svg" alt="" />
+      <img width="566" height="472" src="./img/no-server.svg" alt="" />
     </div>
 
     <div class="create-component">
