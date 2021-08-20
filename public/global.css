@@ -54,6 +54,10 @@ dl,
 dd{ 
   margin: 0; 
 } 
+
+input{
+  padding: 0 10px
+}
  
 body { 
 box-sizing: border-box; 

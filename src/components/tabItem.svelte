@@ -70,6 +70,11 @@
     cursor: default;
     background-color: var(--blueLight);
 
+    img {
+      filter: brightness(0) saturate(100%) invert(43%) sepia(85%)
+        saturate(1777%) hue-rotate(199deg) brightness(102%) contrast(99%);
+    }
+
     .tab-item {
       color: var(--blue);
     }

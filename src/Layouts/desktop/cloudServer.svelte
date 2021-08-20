@@ -16,7 +16,7 @@
   <h1>{content.title}</h1>
   {#if table.length == 0}
     <div class="img-wrapper">
-      <img src="./img/no-server.svg" alt="" />
+      <img width="566" height="472" src="./img/no-server.svg" alt="" />
     </div>
 
     <div class="create-component">
@@ -29,7 +29,7 @@
     </div>
   {/if}
   <div class="create-server">
-    <Button content={'Create Server'} {handleClick} />
+    <Button content={'Create Server'} {handleClick} icon={'plus-icon'} />
   </div>
 
   <ServerTable content={table} />
@@ -48,7 +48,7 @@
     .create-server {
       align-self: flex-end;
       margin-bottom: 40px;
-      width: flexUnit(206px);
+      width: flexUnit(256px);
       //   height: flexUnit(37px);
     }
 

@@ -18,7 +18,7 @@
 <style lang="scss">
   .main-wrapper {
     display: flex;
-    padding: 32px 90px 75px;
+    padding: 0 90px 75px;
     flex-direction: column;
 
     .formAccount-wrapper {

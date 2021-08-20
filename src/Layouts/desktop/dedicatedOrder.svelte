@@ -70,6 +70,7 @@
     background-color: #f3f8fc;
 
     h1 {
+      margin-top: 35px;
       margin-bottom: 45px;
     }
 
