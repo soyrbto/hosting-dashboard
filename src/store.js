@@ -23,6 +23,8 @@ function changeSection(sectionIndex) {
   activeSection.set(sections[sectionIndex]);
   tabState.update((el) => {
     el.fill(false);
+    if (sectionIndex == 4) sectionIndex = 1;
+    if (sectionIndex == 5) sectionIndex = 2;
     el[sectionIndex] = true;
     return el;
   });

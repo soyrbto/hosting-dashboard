@@ -49,7 +49,7 @@ SERVER: QTY OF SERVERS => (NUMBER)} /fetch
       width: 100%;
       background-color: var(--blueLight);
       background-color: #ebf3fe;
-      margin-bottom: 27px;
+      margin-bottom: 22px;
 
       img {
         margin-bottom: 7px;
@@ -60,6 +60,7 @@ SERVER: QTY OF SERVERS => (NUMBER)} /fetch
       width: 160px;
       justify-content: space-around;
       display: flex;
+      margin-bottom: 7px;
     }
   }
 
