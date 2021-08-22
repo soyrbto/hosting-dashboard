@@ -20,7 +20,7 @@
   <h1 class="title">{promotion.title}</h1>
   <h4 class="content">{promotion.content}</h4>
   <div class="button-wrapper">
-    <Button />
+    <Button padding={`10px 32px`} />
   </div>
   <img
     in:fade={{ delay: 300, duration: 500 }}

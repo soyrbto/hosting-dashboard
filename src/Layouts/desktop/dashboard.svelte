@@ -26,7 +26,7 @@
     padding: flexUnit(32px) flexUnit(90px) flexUnit(77px) flexUnit(90px);
 
     h1 {
-      margin-bottom: flexUnit(70px);
+      margin-bottom: flexUnit(60px);
     }
 
     @media only screen and (max-width: 1854px) {

@@ -118,6 +118,8 @@
     }
 
     .goodbye {
+      display: flex;
+      flex-direction: column;
       color: black;
       margin: 0 auto;
       margin-top: 95px;

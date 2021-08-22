@@ -18,17 +18,17 @@
   <h1 class="title">{notification.title}</h1>
   <h4 class="content">{notification.content}</h4>
   <div class="cta-wrapper">
-    <Button />
+    <Button padding={`10px 32px`} content={'Open'} />
   </div>
   <div class="close-wrapper">
-    <Button secundary={true} content={'Close'} />
+    <Button secundary={true} content={'Mark as open'} padding={`10px 32px`} />
   </div>
 </div>
 
 <style lang="scss">
   .card-wrapper {
     display: grid;
-    grid-template-columns: flexUnit(174px) auto;
+    grid-template-columns: min-content auto;
     column-gap: flexUnit(25px);
     grid-template-rows: repeat(auto, 3);
     row-gap: flexUnit(10px);
@@ -43,6 +43,7 @@
     border-radius: flexUnit(20px);
 
     h1 {
+      display: inline-block;
       grid-area: title;
     }
 

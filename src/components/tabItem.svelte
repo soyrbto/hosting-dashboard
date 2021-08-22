@@ -42,6 +42,7 @@
 
 <style lang="scss">
   .main-wrapper {
+    user-select: none;
     cursor: pointer;
     display: flex;
     flex-grow: 1;
