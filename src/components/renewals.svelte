@@ -18,7 +18,7 @@
   <h1 class="title">{renewal.title}</h1>
   <h4 class="content">{renewal.content}</h4>
   <div class="cta-wrapper">
-    <Button secundary={true} padding={`10px 32px`} />
+    <Button secundary={true} padding={`10px 32px`} content={'Check Details'} />
   </div>
 </div>
 
