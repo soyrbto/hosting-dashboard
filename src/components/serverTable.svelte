@@ -10,9 +10,9 @@
     <ServerRow title={true} />
   </div>
 
-  {#each content as content}
+  {#each content as row, i}
     <div class="row-wrapper">
-      <ServerRow {content} />
+      <ServerRow content={row} lastRow={content.length == i + 1} />
     </div>
   {/each}
 </div>
