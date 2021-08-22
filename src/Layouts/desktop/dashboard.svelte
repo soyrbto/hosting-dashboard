@@ -51,7 +51,7 @@
       display: flex;
       align-items: stretch;
       flex-wrap: wrap;
-      margin-top: flexUnit(80px);
+      margin-top: flexUnit(40px);
       justify-content: space-between;
     }
   }

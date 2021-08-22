@@ -24,16 +24,18 @@
     dispatch('clicked');
   }}
 >
-  {#if icon}
-    <img
-      width="29"
-      height="29"
-      src="./img/{handleImageName(icon)}.svg"
-      alt={icon == 'user' ? 'user settings' : 'support'}
-    />
-  {/if}
+  <div class="tab">
+    {#if icon}
+      <img
+        width="29"
+        height="29"
+        src="./img/{handleImageName(icon)}.svg"
+        alt={icon == 'user' ? 'user settings' : 'support'}
+      />
+    {/if}
 
-  <h3 class="tab-item">{itemName}</h3>
+    <h3 class="tab-item">{itemName}</h3>
+  </div>
 
   <div class="vertical-line" />
 </div>
@@ -41,42 +43,47 @@
 <style lang="scss">
   .main-wrapper {
     cursor: pointer;
-    height: 74px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 10px;
+    flex-grow: 1;
 
-    img {
-      margin-left: 13px;
-    }
-
-    .tab-item {
-      padding: 22px 0 22px 10px;
+    .tab {
       width: 95%;
-      color: var(--greyLightMedium);
+      display: flex;
+      align-items: center;
+
+      .tab-item {
+        padding: 22px 0 22px 10px;
+        color: var(--greyLightMedium);
+      }
+
+      img {
+        margin-left: 13px;
+      }
     }
 
     .vertical-line {
-      height: 100%;
       width: 4px;
       background-color: var(--blue);
       visibility: hidden;
+      margin-left: auto;
     }
   }
 
   .selected {
-    transition: all 500ms ease-in-out;
-    cursor: default;
-    background-color: var(--blueLight);
+    .tab {
+      border-radius: 10px;
+      transition: all 500ms ease-in-out;
+      cursor: default;
+      background-color: var(--blueLight);
 
-    img {
-      filter: brightness(0) saturate(100%) invert(43%) sepia(85%)
-        saturate(1777%) hue-rotate(199deg) brightness(102%) contrast(99%);
-    }
+      .tab-item {
+        color: var(--blue);
+      }
 
-    .tab-item {
-      color: var(--blue);
+      img {
+        filter: brightness(0) saturate(100%) invert(43%) sepia(85%)
+          saturate(1777%) hue-rotate(199deg) brightness(102%) contrast(99%);
+      }
     }
 
     .vertical-line {

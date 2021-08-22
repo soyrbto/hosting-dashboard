@@ -30,8 +30,8 @@
     display: grid;
     grid-template-columns: flexUnit(174px) auto;
     column-gap: flexUnit(25px);
-    grid-template-rows: 1fr 1fr 1fr;
-    row-gap: flexUnit(15px);
+    grid-template-rows: repeat(auto, 3);
+    row-gap: flexUnit(10px);
     grid-template-areas:
       'title title'
       'text text'
@@ -49,6 +49,7 @@
     h4 {
       height: fit-content;
       grid-area: text;
+      margin-bottom: 14px;
     }
 
     .cta-wrapper {

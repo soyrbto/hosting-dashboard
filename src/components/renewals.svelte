@@ -35,11 +35,11 @@
     border-radius: flexUnit(20px);
 
     h1 {
-      margin-bottom: flexUnit(15px);
+      margin-bottom: flexUnit(10px);
     }
 
     .cta-wrapper {
-      margin-top: flexUnit(34px);
+      margin-top: flexUnit(24px);
       align-self: center;
       height: flexUnit(57px);
     }
