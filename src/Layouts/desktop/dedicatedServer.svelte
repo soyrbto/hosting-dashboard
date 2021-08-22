@@ -1,4 +1,5 @@
 <script>
+  import { fade } from 'svelte/transition';
   import Button from '../../components/button.svelte';
   import c from '../../staticContent';
   import { changeSection } from '../../store';
@@ -15,7 +16,14 @@
   <h1>{content.title}</h1>
   {#if table.length == 0}
     <div class="img-wrapper">
-      <img width="566" height="472" src="./img/no-server.svg" alt="" />
+      <img
+        in:fade={{ delay: 300, duration: 500 }}
+        loading="lazy"
+        width="566"
+        height="472"
+        src="./img/no-server.svg"
+        alt=""
+      />
     </div>
 
     <div class="create-component">
@@ -34,7 +42,7 @@
     height: 100%;
     padding-top: 32px;
     padding-left: 91px;
-    padding-bottom: 93px;
+    padding-bottom: 40px;
 
     .img-wrapper {
       display: flex;
@@ -42,12 +50,12 @@
     }
 
     h1 {
-      margin-bottom: flexUnit(107px);
+      margin-bottom: flexUnit(50px);
     }
 
     img {
       margin: 0 auto;
-      margin-bottom: flexUnit(90px);
+      margin-bottom: flexUnit(40px);
     }
 
     .create-component {

@@ -1,4 +1,5 @@
 <script>
+  import { fade } from 'svelte/transition';
   import c from '../staticContent';
   import Button from './button.svelte';
 
@@ -19,13 +20,15 @@
   <h1 class="title">{promotion.title}</h1>
   <h4 class="content">{promotion.content}</h4>
   <div class="button-wrapper">
-    <Button />
+    <Button padding={`10px 32px`} />
   </div>
   <img
+    in:fade={{ delay: 300, duration: 500 }}
+    loading="lazy"
     src="./img/promotion.svg"
     alt="promotion banner"
-    width="472"
-    height="240"
+    width="608"
+    height="233"
   />
 </div>
 
@@ -35,13 +38,14 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr 1fr;
     column-gap: 30px;
+    row-gap: 10px;
 
     grid-template-areas:
       'title image'
       'content image'
       'button image';
 
-    padding: flexUnit(53px) flexUnit(60px) flexUnit(80px) flexUnit(60px);
+    padding: flexUnit(32px) flexUnit(32px) flexUnit(32px) flexUnit(60px);
     background-color: white;
     border-radius: 20px;
 

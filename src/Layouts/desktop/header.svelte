@@ -16,7 +16,7 @@
     width: 100%;
     justify-content: flex-end;
     display: flex;
-    height: flexUnit(104px);
+    min-height: flexUnit(64px);
 
     .container-user {
       display: flex;
