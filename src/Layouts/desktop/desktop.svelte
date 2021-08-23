@@ -1,4 +1,6 @@
 <script>
+  import { fade } from 'svelte/transition';
+  import { cubicInOut } from 'svelte/easing';
   import { activeSection } from '../../store';
 
   import Header from './header.svelte';
@@ -14,12 +16,15 @@
   </div>
   <div class="main-wrapper">
     <Header />
-    <svelte:component this={$activeSection} />
+    <section transition:fade={{ duration: 800, easing: cubicInOut }}>
+      <svelte:component this={$activeSection} />
+    </section>
   </div>
 </main>
 
 <style lang="scss">
   main {
+    position: relative;
     display: flex;
 
     .panel-tab {
