@@ -47,10 +47,10 @@
   .cloud-wrapper {
     display: flex;
     height: 100%;
-    padding-top: 32px;
-    padding-left: 91px;
-    padding-right: 40px;
-    padding-bottom: 93px;
+    padding-top: flexUnit(32px);
+    padding-left: flexUnit(70px);
+    padding-right: flexUnit(40px);
+    padding-bottom: flexUnit(93px);
     flex-direction: column;
 
     .create-server {

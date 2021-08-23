@@ -67,6 +67,8 @@
     }
 
     img {
+      height: auto;
+      width: 100%;
       justify-self: end;
       grid-area: image;
     }

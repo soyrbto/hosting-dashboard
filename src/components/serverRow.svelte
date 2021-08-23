@@ -92,7 +92,7 @@
           />
         </span>
       </div>
-      <div>
+      <div class="password">
         Password
         <span>
           <input
@@ -119,8 +119,6 @@
           />
         </span>
       </div>
-
-      <div class="details" />
     </div>
   {/if}
 </div>
@@ -202,6 +200,11 @@
       display: flex;
       align-items: flex-start;
       background-color: #eaf3fe;
+      padding-right: 10px;
+
+      .password {
+        width: 25%;
+      }
 
       div {
         padding: 5px 0px;
