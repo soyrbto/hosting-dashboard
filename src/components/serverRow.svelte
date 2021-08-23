@@ -1,4 +1,5 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
   import { slide } from 'svelte/transition';
   import Button from '../components/button.svelte';
 
@@ -13,16 +14,19 @@
     details: 'Details',
   };
 
+  $: visiblePassword = false;
+  const dispatch = createEventDispatcher();
   let passwordInput;
+  let open = false;
 
   function copyPassword() {
     let pass = passwordInput.value;
     navigator.clipboard.writeText(pass);
   }
 
-  $: visiblePassword = false;
-
-  let open = false;
+  function handleClick() {
+    dispatch('setPassword');
+  }
 </script>
 
 <div class="component-wrapper" class:title class:last-row={lastRow}>
@@ -96,7 +100,12 @@
             bind:this={passwordInput}
           />
           <div class="set-pass">
-            <Button content={'Set Password'} padding={`4px 6px`} mini={true} />
+            <Button
+              content={'Set Password'}
+              padding={`4px 6px`}
+              mini={true}
+              handleClick={() => handleClick()}
+            />
           </div>
           <img
             src="./img/show-password.svg"

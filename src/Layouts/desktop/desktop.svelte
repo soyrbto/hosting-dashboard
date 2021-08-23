@@ -24,6 +24,7 @@
 
 <style lang="scss">
   main {
+    position: relative;
     display: flex;
 
     .panel-tab {

@@ -3,16 +3,24 @@
   import Button from '../../components/button.svelte';
   import c from '../../staticContent';
   import ServerTable from '../../components/serverTable.svelte';
+  import Modal from '../../components/modal.svelte';
 
   let table = c.cloudTable;
   let content = c.cloudServer;
+  let visible = false;
 
   function handleClick() {
     changeSection(4);
   }
+
+  function setPassword() {
+    visible = true;
+  }
 </script>
 
 <div class="cloud-wrapper">
+  <Modal {visible} />
+
   <h1>{content.title}</h1>
   {#if table.length == 0}
     <div class="img-wrapper">
@@ -32,7 +40,7 @@
     <Button content={'Create Server'} {handleClick} icon={'plus-icon'} />
   </div>
 
-  <ServerTable content={table} />
+  <ServerTable content={table} on:setPassword={() => setPassword()} />
 </div>
 
 <style lang="scss">
