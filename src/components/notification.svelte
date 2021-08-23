@@ -21,7 +21,7 @@
     <Button padding={`10px 32px`} content={'Open'} />
   </div>
   <div class="close-wrapper">
-    <Button secundary={true} content={'Mark as open'} padding={`10px 32px`} />
+    <Button secundary={true} content={'Dismiss'} padding={`10px 32px`} />
   </div>
 </div>
 
@@ -37,7 +37,7 @@
       'text text'
       'button close';
 
-    padding: flexUnit(34px);
+    padding: flexUnit(20px);
     padding-left: flexUnit(60px);
     background-color: white;
     border-radius: flexUnit(20px);

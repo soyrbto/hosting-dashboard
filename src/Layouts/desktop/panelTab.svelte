@@ -40,9 +40,6 @@
 
 <style lang="scss">
   aside {
-    padding-top: 16px;
-    background-color: white;
-
     .fixed-container {
       display: flex;
       flex-direction: column;
@@ -51,8 +48,7 @@
       padding-bottom: flexUnit(50px);
       height: 100vh;
       background-color: white;
-      width: 20%;
-      position: fixed;
+      position: sticky;
     }
 
     .logo-container {

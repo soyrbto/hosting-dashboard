@@ -78,7 +78,7 @@
     .card-wrapper {
       padding: flexUnitM(30px) flexUnitM(15px);
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 5fr 1fr 1fr;
+      grid-template-rows: 1fr 2fr 1fr 1fr;
       grid-template-areas:
         'title'
         'image'

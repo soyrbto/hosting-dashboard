@@ -42,7 +42,7 @@
 
     .line {
       margin-right: flexUnit(30px);
-      width: 95%;
+      width: 100%;
       height: 1px;
       background-color: #7c838b;
     }

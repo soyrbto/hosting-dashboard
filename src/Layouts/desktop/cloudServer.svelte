@@ -45,10 +45,11 @@
 
 <style lang="scss">
   .cloud-wrapper {
+    align-content: stretch;
     display: flex;
     height: 100%;
     padding-top: flexUnit(32px);
-    padding-left: flexUnit(70px);
+    padding-left: flexUnit(40px);
     padding-right: flexUnit(40px);
     padding-bottom: flexUnit(93px);
     flex-direction: column;
