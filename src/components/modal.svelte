@@ -1,10 +1,13 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
   import { fade } from 'svelte/transition';
   import Button from '../components/button.svelte';
   export let visible = false;
 
+  const dispatch = createEventDispatcher();
+
   function handleClick() {
-    visible = false;
+    dispatch('modalClick');
   }
 </script>
 
@@ -16,14 +19,14 @@
         alt=""
         width="20"
         height="20"
-        on:click={() => (visible = !visible)}
+        on:click={() => handleClick()}
       />
       <p class="bodySmall">
         you password will be reset <span> do you want to continue? </span>
       </p>
       <div class="button-wrapper">
         <Button
-          content={'continue'}
+          content={'Continue'}
           padding={`10px 32px`}
           handleClick={() => handleClick()}
         />

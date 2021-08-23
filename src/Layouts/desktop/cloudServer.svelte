@@ -19,7 +19,7 @@
 </script>
 
 <div class="cloud-wrapper">
-  <Modal {visible} />
+  <Modal {visible} on:modalClick={() => (visible = !visible)} />
 
   <h1>{content.title}</h1>
   {#if table.length == 0}
