@@ -6,12 +6,19 @@
   export let title = false;
   export let content = {
     price: 'Price',
-    label: 'label',
+    label: 'Label',
     location: 'Location',
     status: 'Status',
     actions: 'Actions',
     details: 'Details',
   };
+
+  let passwordInput;
+
+  function copyPassword() {
+    let pass = passwordInput.value;
+    navigator.clipboard.writeText(pass);
+  }
 
   $: visiblePassword = false;
 
@@ -19,7 +26,7 @@
 </script>
 
 <div class="component-wrapper" class:title class:last-row={lastRow}>
-  <div class="row">
+  <div class="row" class:open>
     <div class="label">
       {content.label}
       <span>{content.system == undefined ? '' : content.system}</span>
@@ -65,27 +72,45 @@
         <span> 192.256.65.1 </span>
       </div>
       <div>
+        OS
+        <span>
+          Linux 001
+          <!-- <img src="./img/reinstall-icon.svg" alt="" /> -->
+        </span>
+      </div>
+      <div>
+        Clone server
+        <span class="button-wrapper">
+          <Button
+            secundary={true}
+            padding={`6px 20px`}
+            content={'Clone Server'}
+          />
+        </span>
+      </div>
+      <div>
         Password
         <span>
-          <input type={visiblePassword ? 'text' : 'password'} />
+          <input
+            type={visiblePassword ? 'text' : 'password'}
+            bind:this={passwordInput}
+          />
+          <div class="set-pass">
+            <Button content={'Set Password'} padding={`4px 6px`} mini={true} />
+          </div>
           <img
             src="./img/show-password.svg"
             alt="show password toggle"
             on:click={() => (visiblePassword = !visiblePassword)}
-          /></span
-        >
+          />
+          <img
+            src="./img/copy-icon.svg"
+            alt="save in your clipboard"
+            on:click={copyPassword}
+          />
+        </span>
       </div>
-      <div>
-        OS
-        <span> Linux 001 <img src="./img/reinstall-icon.svg" alt="" /> </span>
-      </div>
-      <div class="button-wrapper">
-        <Button
-          secundary={true}
-          padding={`6px 20px`}
-          content={'Clone Server'}
-        />
-      </div>
+
       <div class="details" />
     </div>
   {/if}
@@ -95,10 +120,10 @@
   .component-wrapper {
     .row {
       border-bottom: solid 1px #bcbcbc;
-      height: 61px;
-      padding: 0px 40px;
+      padding: 16px 40px;
       display: flex;
       flex-grow: 1;
+      align-items: center;
 
       .details {
         width: 2%;
@@ -119,7 +144,6 @@
       }
 
       div {
-        padding-top: 16px;
         color: var(--greyMedium);
         width: 20%;
         font-family: Nunito Sans;
@@ -131,36 +155,52 @@
           cursor: pointer;
         }
 
+        .button-wrapper {
+          margin-top: 10px;
+        }
+
         span {
           display: block;
           font-family: Nunito Sans;
           font-style: normal;
           font-weight: 400;
           font-size: flexUnit(12px);
+          display: flex;
+          align-items: center;
 
           img {
             margin-left: 10px;
           }
 
           input {
-            width: 70%;
+            width: 50%;
+            font-size: flexUnit(14px);
+          }
+
+          .set-pass {
+            margin-left: 6px;
+            min-width: fit-content;
           }
         }
       }
     }
 
+    .row.open {
+      border-bottom: none;
+    }
+
     .subtable {
+      display: flex;
+      align-items: flex-start;
       background-color: #eaf3fe;
-      height: auto;
-      padding: 0px 40px;
 
       div {
-        padding: 10px 0px;
+        padding: 5px 0px;
       }
 
-      .button-wrapper {
-        height: auto;
-        padding: 25px 0;
+      span {
+        display: flex;
+        align-items: stretch;
       }
     }
 
@@ -179,6 +219,13 @@
   .component-wrapper.last-row {
     .row {
       border-bottom: none;
+    }
+  }
+
+  .component-wrapper.title {
+    div > div {
+      color: black;
+      font-weight: 700;
     }
   }
 </style>
