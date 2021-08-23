@@ -9,7 +9,7 @@
 </script>
 
 {#if visible}
-  <div class="main-wrapper" in:fade={{ duration: 500 }}>
+  <div class="main-wrapper" transition:fade={{ duration: 500 }}>
     <div class="window">
       <img
         src="./img/button-cancel.svg"

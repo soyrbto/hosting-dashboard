@@ -7,7 +7,7 @@
 
   let table = c.cloudTable;
   let content = c.cloudServer;
-  let visible = false;
+  $: visible = false;
 
   function handleClick() {
     changeSection(4);

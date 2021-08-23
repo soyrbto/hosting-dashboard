@@ -56,6 +56,7 @@
     }
 
     .logo-container {
+      cursor: pointer;
       margin-bottom: 44px;
     }
   }
