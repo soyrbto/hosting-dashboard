@@ -6,16 +6,19 @@
   import Header from './header.svelte';
   import PanelTab from './panelTab.svelte';
 
-  //   prop:
-  // account name: string / fetch => store
+  let windowsWidth;
 </script>
 
+<svelte:window bind:innerWidth={windowsWidth} />
+
+<Header />
 <main>
-  <div class="panel-tab">
-    <PanelTab />
-  </div>
+  {#if windowsWidth > 1100}
+    <div class="panel-tab">
+      <PanelTab />
+    </div>
+  {/if}
   <div class="main-wrapper">
-    <Header />
     <section transition:fade={{ duration: 800, easing: cubicInOut }}>
       <svelte:component this={$activeSection} />
     </section>
@@ -24,6 +27,8 @@
 
 <style lang="scss">
   main {
+    background-color: #f3f8fc;
+    height: 100%;
     position: relative;
     display: flex;
 
@@ -33,8 +38,7 @@
     }
 
     .main-wrapper {
-      min-height: 100vh;
-      width: 80%;
+      width: 100%;
       display: flex;
       flex-direction: column;
     }

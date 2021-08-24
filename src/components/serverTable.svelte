@@ -1,6 +1,7 @@
 <script>
   import { createEventDispatcher } from 'svelte';
   import ServerRow from '../components/serverRow.svelte';
+  import Account from '../Layouts/desktop/account.svelte';
   export let content = [];
 
   $: detailOpen = new Array(content.length).fill(false);
@@ -9,23 +10,42 @@
   function setPassword() {
     dispatch('setPassword');
   }
+
+  let windowsWidth;
 </script>
 
-<div class="table-wrapper">
-  <div class="row-wrapper">
-    <ServerRow title={true} />
-  </div>
+<svelte:window bind:innerWidth={windowsWidth} />
 
-  {#each content as row, i}
+{#if windowsWidth > 962}
+  <div class="table-wrapper">
     <div class="row-wrapper">
-      <ServerRow
-        content={row}
-        lastRow={content.length == i + 1}
-        on:setPassword={() => setPassword()}
-      />
+      <ServerRow title={true} />
+    </div>
+
+    {#each content as row, i}
+      <div class="row-wrapper">
+        <ServerRow
+          content={row}
+          lastRow={content.length == i + 1}
+          on:setPassword={() => setPassword()}
+        />
+      </div>
+    {/each}
+  </div>
+{:else}
+  {#each content as row, i}
+    <div class="table-wrapper">
+      <div class="table-item">
+        <ServerRow title={true} />
+        <ServerRow
+          title={false}
+          content={row}
+          lastRow={content.length == i + 1}
+        />
+      </div>
     </div>
   {/each}
-</div>
+{/if}
 
 <style lang="scss">
   .table-wrapper {

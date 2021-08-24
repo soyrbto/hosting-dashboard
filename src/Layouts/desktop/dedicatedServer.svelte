@@ -39,21 +39,22 @@
 
 <style lang="scss">
   .dedicated-wrapper {
-    height: 100%;
-    padding-top: 32px;
-    padding-left: 91px;
-    padding-bottom: 40px;
-
     .img-wrapper {
+      height: auto;
+      width: 100%;
       display: flex;
       justify-content: center;
     }
 
     h1 {
+      margin-top: flexUnit(32px);
+      margin-left: flexUnit(90px);
       margin-bottom: flexUnit(50px);
     }
 
     img {
+      width: flexUnit(566px);
+      height: auto;
       margin: 0 auto;
       margin-bottom: flexUnit(40px);
     }
@@ -72,6 +73,15 @@
       .button-wrapper {
         height: flexibleUnit(57px);
         width: flexibleUnit(327px);
+        margin-bottom: flexUnit(30px);
+      }
+    }
+  }
+
+  @media only screen and (max-width: 962px) {
+    .dedicated-wrapper {
+      .create-component {
+        margin: 0 flexUnitM(30px);
       }
     }
   }

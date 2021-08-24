@@ -23,6 +23,7 @@
 
 <style lang="scss">
   .dashboard-wrapper {
+    width: 100%;
     padding: flexUnit(32px) flexUnit(90px) flexUnit(77px) flexUnit(90px);
 
     h1 {

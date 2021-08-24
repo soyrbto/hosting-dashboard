@@ -76,4 +76,16 @@
       justify-content: flex-end;
     }
   }
+
+  @media only screen and (max-width: 962px) {
+    .form-wrapper {
+      form {
+        flex-direction: column;
+
+        .field {
+          width: 100%;
+        }
+      }
+    }
+  }
 </style>

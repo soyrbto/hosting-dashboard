@@ -46,18 +46,15 @@
 <style lang="scss">
   .cloud-wrapper {
     display: flex;
-    height: 100%;
-    padding-top: 32px;
-    padding-left: 91px;
-    padding-right: 40px;
-    padding-bottom: 93px;
     flex-direction: column;
+    // padding-top: flexUnit(32px);
+    padding-left: flexUnit(90px);
+    padding-right: flexUnit(40px);
+    // padding-bottom: flexUnit(93px);
 
     .create-server {
       align-self: flex-end;
       margin-bottom: 40px;
-      width: flexUnit(256px);
-      //   height: flexUnit(37px);
     }
 
     .img-wrapper {
@@ -66,10 +63,12 @@
     }
 
     h1 {
+      margin-top: flexUnit(32px);
       margin-bottom: flexUnit(107px);
     }
 
     img {
+      height: auto;
       margin: 0 auto;
       margin-bottom: flexUnit(90px);
     }
