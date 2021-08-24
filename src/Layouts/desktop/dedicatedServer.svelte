@@ -53,9 +53,9 @@
     }
 
     img {
-      width: flexUnit(566px);
+      width: 100%;
       height: auto;
-      margin: 0 auto;
+      margin: 0 flexUnit(480px);
       margin-bottom: flexUnit(40px);
     }
 

@@ -18,7 +18,8 @@
 --blueDark:  #096CFF;
 }
  
-html { 
+html {
+  background-color: #F3F8FC;
   font-size: 70%;
   padding: 0;
 } 
