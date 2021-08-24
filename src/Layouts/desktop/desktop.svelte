@@ -36,7 +36,8 @@
     }
 
     .main-wrapper {
-      min-height: 92vh;
+      background-color: #f3f8fc;
+      // height: 100%;
       width: 100%;
       display: flex;
       flex-direction: column;

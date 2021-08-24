@@ -2,6 +2,7 @@
 </script>
 
 <header>
+  <img src="./img/menu.svg" alt="" class="menu" />
   <div class="logo-container">
     <img src="./img/logo.svg" alt="" />
   </div>
@@ -13,20 +14,21 @@
 
 <style lang="scss">
   header {
-    width: 100%;
-    justify-content: flex-end;
+    justify-content: space-between;
     display: flex;
-    min-height: 8vh;
+    height: 8vh;
     background-color: #086cff;
-    padding-left: flexUnit(22px);
+    padding: 0px flexUnit(25px);
     align-items: center;
+
+    img.menu {
+      display: none;
+    }
 
     .container-user {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      width: 100%;
-      padding-right: flexUnit(25px);
 
       img {
         cursor: pointer;
@@ -41,8 +43,9 @@
 
   @media only screen and (max-width: 1100px) {
     header {
-      .container-user {
-        background-color: white;
+      justify-content: space-between;
+      img.menu {
+        display: inline;
       }
     }
   }

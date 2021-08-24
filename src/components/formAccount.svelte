@@ -106,4 +106,20 @@
       }
     }
   }
+
+  @media only screen and (max-width: 962px) {
+    .form-wrapper {
+      form {
+        flex-direction: column;
+
+        .buttons {
+          margin: 0 auto;
+        }
+
+        .field {
+          width: 100%;
+        }
+      }
+    }
+  }
 </style>
