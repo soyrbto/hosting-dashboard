@@ -74,7 +74,7 @@
     }
   }
 
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 962px) {
     .card-wrapper {
       padding: flexUnitM(30px) flexUnitM(15px);
       grid-template-columns: 1fr;

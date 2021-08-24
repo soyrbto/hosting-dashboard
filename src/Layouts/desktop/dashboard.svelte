@@ -56,4 +56,10 @@
       justify-content: space-between;
     }
   }
+
+  @media only screen and (max-width: 962px) {
+    .dashboard-wrapper {
+      padding: flexUnit(32px) flexUnit(40px) flexUnit(77px);
+    }
+  }
 </style>

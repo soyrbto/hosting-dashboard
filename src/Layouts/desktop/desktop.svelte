@@ -28,7 +28,6 @@
 <style lang="scss">
   main {
     background-color: #f3f8fc;
-    height: 100%;
     position: relative;
     display: flex;
 
