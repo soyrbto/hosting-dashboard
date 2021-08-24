@@ -11,6 +11,7 @@
 
 <svelte:window bind:innerWidth={windowsWidth} />
 
+<Header />
 <main>
   {#if windowsWidth > 1100}
     <div class="panel-tab">
@@ -18,7 +19,6 @@
     </div>
   {/if}
   <div class="main-wrapper">
-    <Header />
     <section transition:fade={{ duration: 800, easing: cubicInOut }}>
       <svelte:component this={$activeSection} />
     </section>
@@ -36,7 +36,7 @@
     }
 
     .main-wrapper {
-      min-height: 100vh;
+      min-height: 92vh;
       width: 100%;
       display: flex;
       flex-direction: column;

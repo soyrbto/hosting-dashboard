@@ -10,10 +10,6 @@
 <aside>
   <div class="fixed-container">
     <div class="top">
-      <div class="logo-container">
-        <img src="./img/logo.svg" alt="" on:click={() => changeSection(0)} />
-      </div>
-
       <div class="top-container">
         {#each itemsTop as itemName, i}
           <TabItem
@@ -45,15 +41,11 @@
       flex-direction: column;
       justify-content: space-between;
       padding-left: 20px;
-      padding-bottom: flexUnit(50px);
-      height: 100vh;
+      padding-top: flexUnit(84px);
+      padding-bottom: flexUnit(10px);
+      height: 90vh;
       background-color: white;
       position: sticky;
-    }
-
-    .logo-container {
-      cursor: pointer;
-      margin-bottom: 44px;
     }
   }
 </style>
