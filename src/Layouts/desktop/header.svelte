@@ -1,23 +1,32 @@
 <script>
-  import { changeSection } from '../../store';
+  import { createEventDispatcher } from 'svelte';
+  import { changeSection, tabState } from '../../store';
   import { slide } from 'svelte/transition';
   import { cubicInOut } from 'svelte/easing';
   import c from '../../staticContent';
   import { handleImageName } from '../../utilities';
 
+  const dispatch = createEventDispatcher();
+
   let items = [...c.panelTab.top, ...c.panelTab.bottom];
 
-  export let open = false;
+  export let menuOpen = false;
   let windowsWidth;
   $: {
     open = windowsWidth > 1100 ? false : open;
+  }
+
+  function handleClick(sectionIndex) {
+    dispatch('clickMenu', open);
+    console.log(sectionIndex);
+    if (!isNaN(sectionIndex)) changeSection(sectionIndex);
   }
 </script>
 
 <svelte:window bind:innerWidth={windowsWidth} />
 
 <header>
-  {#if open && windowsWidth < 1100}
+  {#if menuOpen && windowsWidth < 1100}
     <div
       class="floating-menu"
       transition:slide={{ duration: 300, easing: cubicInOut }}
@@ -25,26 +34,16 @@
       <nav>
         <ul>
           {#each items as item, i}
-            <li
-              on:click={() => {
-                changeSection(i);
-                open = false;
-              }}
-            >
+            <li on:click={() => handleClick(i)}>
               <img src="./img/{handleImageName(item)}-icon.svg" alt={item} />
-              <h3>{item}</h3>
+              <h3 class:select={$tabState[i]}>{item}</h3>
             </li>
           {/each}
         </ul>
       </nav>
     </div>
   {/if}
-  <img
-    src="./img/menu.svg"
-    alt=""
-    class="menu"
-    on:click={() => (open = !open)}
-  />
+  <img src="./img/menu.svg" alt="" class="menu" on:click={handleClick} />
   <div class="logo-container">
     <img src="./img/logo.svg" alt="" />
   </div>
@@ -56,7 +55,6 @@
 
 <style lang="scss">
   header {
-    position: relative;
     justify-content: space-between;
     display: flex;
     background-color: #086cff;
@@ -109,6 +107,10 @@
             align-items: center;
             display: flex;
             list-style: none;
+
+            h3.select {
+              color: var(--blue);
+            }
 
             &:nth-child(3) {
               margin-bottom: auto;
