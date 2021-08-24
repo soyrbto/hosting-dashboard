@@ -49,20 +49,8 @@
 
 <style lang="scss">
   .table-wrapper {
-    display: flex;
-    .row-wrapper {
-      display: flex;
-      // flex-direction: column;
-    }
-
     padding: 10px 10px;
     background-color: white;
     border-radius: 20px;
-  }
-
-  .table-wrapper {
-    .table-item {
-      display: flex;
-    }
   }
 </style>
