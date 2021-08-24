@@ -44,4 +44,10 @@
       height: flexUnit(57px);
     }
   }
+
+  @media only screen and (max-width: 962px) {
+    .card-wrapper {
+      padding: flexUnitM(20px);
+    }
+  }
 </style>

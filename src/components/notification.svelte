@@ -65,4 +65,10 @@
       grid-area: close;
     }
   }
+
+  @media only screen and (max-width: 962px) {
+    .card-wrapper {
+      padding: flexUnitM(20px);
+    }
+  }
 </style>

@@ -59,9 +59,8 @@
     position: relative;
     justify-content: space-between;
     display: flex;
-    height: 8vh;
     background-color: #086cff;
-    padding: 0px flexUnit(25px);
+    padding: 10px flexUnit(25px);
     align-items: center;
 
     img.menu {
