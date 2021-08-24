@@ -45,12 +45,4 @@
       background-color: white;
     }
   }
-
-  @media only screen and (max-width: 962px) {
-    .aside {
-      .fixed-container {
-        height: auto;
-      }
-    }
-  }
 </style>
