@@ -1,21 +1,11 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+  import { handleImageName } from '../utilities';
   export let itemName;
   export let selected = false;
-  export let icon = false;
-  export let smallScreen;
+  let smallScreen;
 
   const dispatch = createEventDispatcher();
-
-  function handleImageName(rawName) {
-    let imageName;
-    if (icon) {
-      imageName = rawName.replace(' ', '-').toLowerCase();
-      return imageName;
-    } else {
-      return false;
-    }
-  }
 </script>
 
 <div
@@ -27,14 +17,12 @@
   }}
 >
   <div class="tab">
-    {#if icon}
-      <img
-        width="29"
-        height="29"
-        src="./img/{handleImageName(icon)}.svg"
-        alt={icon == 'user' ? 'user settings' : 'support'}
-      />
-    {/if}
+    <img
+      width="29"
+      height="29"
+      src="./img/{handleImageName(itemName)}-icon.svg"
+      alt={itemName == 'account' ? 'user settings' : 'support'}
+    />
 
     <h3 class="tab-item">{smallScreen ? '' : itemName}</h3>
   </div>

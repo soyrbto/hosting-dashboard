@@ -13,7 +13,6 @@
       <div class="top-container">
         {#each itemsTop as itemName, i}
           <TabItem
-            icon={`${itemName}-icon`}
             {itemName}
             selected={$tabState[i]}
             on:clicked={() => changeSection(i)}
@@ -25,11 +24,10 @@
     <div class="bottom-container">
       <TabItem
         itemName={itemsBottom[0]}
-        icon="user"
-        on:clicked={() => changeSection(3)}
         selected={$tabState[3]}
+        on:clicked={() => changeSection(3)}
       />
-      <TabItem itemName={itemsBottom[1]} icon="support" />
+      <TabItem itemName={itemsBottom[1]} />
     </div>
   </div>
 </aside>

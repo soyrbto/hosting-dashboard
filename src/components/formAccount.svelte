@@ -18,11 +18,11 @@
     </div>
     <div class="field">
       <label for=""> Country </label>
-      <select name="country" id="" />
+      <select name="country" />
     </div>
     <div class="field">
       <label for=""> City </label>
-      <select name="city" id="" />
+      <select name="city" />
     </div>
     <div class="field">
       <label for=""> address </label>

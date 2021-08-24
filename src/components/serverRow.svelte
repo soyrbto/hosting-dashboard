@@ -240,4 +240,13 @@
       font-weight: 700;
     }
   }
+
+  @media only screen and (max-width: 962px) {
+    .component-wrapper {
+      .row {
+        flex-grow: 1;
+        flex-direction: column;
+      }
+    }
+  }
 </style>
