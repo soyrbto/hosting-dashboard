@@ -1,5 +1,6 @@
 <script>
   import Button from '../components/button.svelte';
+  import countryList from '../countryList';
 </script>
 
 <div class="form-wrapper">
@@ -18,11 +19,15 @@
     </div>
     <div class="field">
       <label for=""> Country </label>
-      <select name="country" />
+      <select name="country">
+        {#each countryList as country}
+          <option value={country}>{country}</option>
+        {/each}
+      </select>
     </div>
     <div class="field">
       <label for=""> City </label>
-      <select name="city" />
+      <input type="text" />
     </div>
     <div class="field">
       <label for=""> address </label>

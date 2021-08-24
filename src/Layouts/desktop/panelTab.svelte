@@ -41,9 +41,16 @@
       padding-left: 20px;
       padding-top: flexUnit(84px);
       padding-bottom: flexUnit(10px);
-      height: 90vh;
+      height: 92vh;
       background-color: white;
-      position: sticky;
+    }
+  }
+
+  @media only screen and (max-width: 962px) {
+    .aside {
+      .fixed-container {
+        height: auto;
+      }
     }
   }
 </style>
