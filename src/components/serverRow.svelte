@@ -1,8 +1,8 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import { slide } from 'svelte/transition';
-  import Button from '../components/button.svelte';
+  import ServerInfo from '../components/serverInfo.svelte';
 
+  export let open = false;
   export let lastRow = false;
   export let title = false;
   export let content = {
@@ -13,118 +13,67 @@
     actions: 'Actions',
     details: 'Details',
   };
-
-  $: visiblePassword = false;
   const dispatch = createEventDispatcher();
-  let passwordInput;
-  let open = false;
+  let windowsWidth;
 
-  function copyPassword() {
-    let pass = passwordInput.value;
-    navigator.clipboard.writeText(pass);
-  }
-
-  function handleClick() {
-    dispatch('setPassword');
+  function handleCLick() {
+    dispatch('detail');
   }
 </script>
 
-<div class="component-wrapper" class:title class:last-row={lastRow}>
-  <div class="row" class:open>
-    <div class="label">
-      {content.label}
-      <span>{content.system == undefined ? '' : content.system}</span>
-    </div>
-    <div class="price">{content.price}</div>
-    <div class="location">{content.location}</div>
-    <div
-      class="status {!title ? (content.status ? 'active' : 'inactive') : ''}"
-    >
-      {!title ? (content.status ? 'Active' : 'Inactive') : 'Status'}
-    </div>
-    <div class="actions">
-      {#if !title}
-        <img src="./img/stopIcon.svg" alt="" />
-        <img src="./img/restartIcon.svg" alt="" />
-        <img src="./img/reinstallIcon.svg" alt="" />
-      {:else}
-        Actions
-      {/if}
-    </div>
-    <div class="details">
-      {#if !title}
-        <img
-          on:click={() => {
-            open = !open;
-          }}
-          src="./img/detailsIcon.svg"
-          alt=""
-        />
-      {/if}
-    </div>
-  </div>
+<svelte:window bind:innerWidth={windowsWidth} />
 
-  {#if open}
-    <div class="row subtable" transition:slide>
-      <div>
-        IP address
-        <span> 192.256.65.1 </span>
+<div class="main-wrapper">
+  <div class="component-wrapper" class:title class:last-row={lastRow}>
+    <div class="row" class:open>
+      <div class="label">
+        {content.label}
+        <span>{content.system == undefined ? '' : content.system}</span>
       </div>
-      <div>
-        aditional IPs
-        <span> 192.256.65.1 </span>
-        <span> 192.256.65.1 </span>
+      <div class="price">{content.price}</div>
+      <div class="location">{content.location}</div>
+      <div
+        class="status {!title ? (content.status ? 'active' : 'inactive') : ''}"
+      >
+        {!title ? (content.status ? 'Active' : 'Inactive') : 'Status'}
       </div>
-      <div>
-        OS
-        <span>
-          Linux 001
-          <!-- <img src="./img/reinstall-icon.svg" alt="" /> -->
-        </span>
-      </div>
-      <div>
-        Clone server
-        <span class="button-wrapper">
-          <Button
-            secundary={true}
-            padding={`6px 20px`}
-            content={'Clone Server'}
-          />
-        </span>
-      </div>
-      <div class="password">
-        Password
-        <span>
-          <input
-            type={visiblePassword ? 'text' : 'password'}
-            bind:this={passwordInput}
-          />
-          <div class="set-pass">
-            <Button
-              content={'Set Password'}
-              padding={`4px 6px`}
-              mini={true}
-              handleClick={() => handleClick()}
-            />
-          </div>
+      <div class="actions">
+        {#if !title}
+          <img src="./img/stopIcon.svg" alt="" />
+          <img src="./img/restartIcon.svg" alt="" />
+          <img src="./img/reinstallIcon.svg" alt="" />
           <img
-            src="./img/show-password.svg"
-            alt="show password toggle"
-            on:click={() => (visiblePassword = !visiblePassword)}
+            class="details"
+            src="./img/detailsIcon.svg"
+            alt=""
+            on:click={handleCLick}
           />
+        {:else}
+          Actions
+        {/if}
+      </div>
+      <div class="details">
+        {#if !title}
           <img
-            src="./img/copy-icon.svg"
-            alt="save in your clipboard"
-            on:click={copyPassword}
+            on:click={() => {
+              open = !open;
+            }}
+            src="./img/detailsIcon.svg"
+            alt=""
           />
-        </span>
+        {/if}
       </div>
     </div>
-  {/if}
+
+    {#if windowsWidth > 962}
+      <ServerInfo {open} />
+    {/if}
+  </div>
 </div>
 
 <style lang="scss">
   .component-wrapper {
+    flex-wrap: wrap;
     .row {
       border-bottom: solid 1px #bcbcbc;
       padding: 16px 40px;
@@ -162,10 +111,6 @@
           cursor: pointer;
         }
 
-        .button-wrapper {
-          margin-top: 10px;
-        }
-
         span {
           display: block;
           font-family: Nunito Sans;
@@ -178,42 +123,12 @@
           img {
             margin-left: 10px;
           }
-
-          input {
-            width: 50%;
-            font-size: flexUnit(14px);
-          }
-
-          .set-pass {
-            margin-left: 6px;
-            min-width: fit-content;
-          }
         }
       }
     }
 
     .row.open {
       border-bottom: none;
-    }
-
-    .subtable {
-      display: flex;
-      align-items: flex-start;
-      background-color: #eaf3fe;
-      padding-right: 10px;
-
-      .password {
-        width: 25%;
-      }
-
-      div {
-        padding: 5px 0px;
-      }
-
-      span {
-        display: flex;
-        align-items: stretch;
-      }
     }
 
     .title {
@@ -243,9 +158,34 @@
 
   @media only screen and (max-width: 962px) {
     .component-wrapper {
+      margin: 0 auto;
       .row {
+        justify-content: space-between;
+        border: none;
         flex-grow: 1;
         flex-direction: column;
+        height: 100%;
+        padding: 0 0 0 15px;
+
+        & > div {
+          width: 100%;
+          & + * {
+            margin-top: 15px;
+          }
+        }
+
+        .actions {
+          display: flex;
+
+          .details {
+            display: inline;
+          }
+        }
+
+        .details {
+          display: none;
+          width: auto;
+        }
       }
     }
   }

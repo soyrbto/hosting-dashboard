@@ -17,7 +17,7 @@ const sections = {
 };
 
 const tabState = writable([true, false, false, false]);
-const activeSection = writable(Dashboard);
+const activeSection = writable(CloudServer);
 
 function changeSection(sectionIndex) {
   activeSection.set(sections[sectionIndex]);
