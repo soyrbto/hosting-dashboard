@@ -90,4 +90,10 @@
       }
     }
   }
+
+  @media only screen and (max-width: 962px) {
+    .cloud-wrapper {
+      padding: 0 flexUnit(40px);
+    }
+  }
 </style>
