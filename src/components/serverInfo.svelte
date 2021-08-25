@@ -18,24 +18,24 @@
 </script>
 
 {#if open}
-  <div class="row subtable" transition:slide>
-    <div>
+  <div class=" subtable" transition:slide>
+    <div class="row">
       IP address
       <span> 192.256.65.1 </span>
     </div>
-    <div>
+    <div class="row">
       Aditional IPs
       <span> 192.256.65.1 </span>
       <span> 192.256.65.1 </span>
     </div>
-    <div>
+    <div class="row">
       OS
       <span>
         Linux 001
         <!-- <img src="./img/reinstall-icon.svg" alt="" /> -->
       </span>
     </div>
-    <div>
+    <div class="row">
       Clone server
       <span class="button-wrapper">
         <Button
@@ -45,7 +45,7 @@
         />
       </span>
     </div>
-    <div class="password">
+    <div class="password row">
       Password
       <span>
         <input
@@ -77,55 +77,45 @@
 
 <style lang="scss">
   .row {
-    border-bottom: solid 1px #bcbcbc;
-    padding: 16px 40px;
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
+    img {
+      cursor: pointer;
+    }
 
-    div {
-      color: var(--greyMedium);
-      width: 20%;
+    .button-wrapper {
+      margin-top: 10px;
+    }
+
+    span {
+      display: block;
       font-family: Nunito Sans;
       font-style: normal;
-      font-weight: 600;
-      font-size: flexUnit(18px);
+      font-weight: 400;
+      font-size: flexUnit(12px);
+      display: flex;
+      align-items: center;
 
       img {
-        cursor: pointer;
+        margin-left: 10px;
       }
 
-      .button-wrapper {
-        margin-top: 10px;
+      input {
+        width: 50%;
+        font-size: flexUnit(14px);
       }
 
-      span {
-        display: block;
-        font-family: Nunito Sans;
-        font-style: normal;
-        font-weight: 400;
-        font-size: flexUnit(12px);
-        display: flex;
-        align-items: center;
-
-        img {
-          margin-left: 10px;
-        }
-
-        input {
-          width: 50%;
-          font-size: flexUnit(14px);
-        }
-
-        .set-pass {
-          margin-left: 6px;
-          min-width: fit-content;
-        }
+      .set-pass {
+        width: flexUnit(90px);
+        margin-left: 6px;
       }
     }
   }
 
   .subtable {
+    border-bottom: solid 1px #bcbcbc;
+    padding: 16px 40px;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
     display: flex;
     align-items: flex-start;
     background-color: #eaf3fe;
@@ -136,36 +126,48 @@
     }
 
     div {
+      color: var(--greyMedium);
+      width: 20%;
+      font-family: Nunito Sans;
+      font-style: normal;
+      font-weight: 600;
+      font-size: flexUnit(18px);
       padding: 5px 0px;
     }
 
     span {
       display: flex;
-      align-items: stretch;
     }
   }
 
   @media only screen and (max-width: 962px) {
     .row {
-      border: none;
-      padding: 40px 10px 10px;
+      span {
+        input {
+          width: auto;
+        }
+        .set-pass {
+          width: auto;
+        }
+      }
     }
     .subtable {
+      border-radius: 10px;
+      margin-top: 20px;
+      padding: 10px 10px 10px;
+      border: none;
       flex-direction: column;
-      background-color: white;
-      align-items: center;
 
-      div {
+      .row {
+        margin: 0 auto;
         width: 25%;
         font-size: 14px;
-
-        .button-wrapper {
-          width: 120px;
-        }
       }
 
       .password {
-        width: 100%;
+        align-self: center;
+        width: fit-content;
+        margin: 0;
       }
     }
   }

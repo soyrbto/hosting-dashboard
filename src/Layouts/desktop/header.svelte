@@ -18,7 +18,6 @@
 
   function handleClick(sectionIndex) {
     dispatch('clickMenu', open);
-    console.log(sectionIndex);
     if (!isNaN(sectionIndex)) changeSection(sectionIndex);
   }
 </script>
