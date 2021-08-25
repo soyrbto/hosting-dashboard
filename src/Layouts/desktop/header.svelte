@@ -86,11 +86,11 @@
 
     .floating-menu {
       background-color: #f3f8fc;
-      padding-top: 27px;
-      padding-left: 30px;
+      padding-top: flexUnit(27px);
+      padding-left: flexUnit(30px);
       z-index: 100;
-      width: 288px;
-      height: 449px;
+      width: flexUnit(288px);
+      height: flexUnit(449px);
       position: absolute;
       box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
       border-radius: 0px 10px 10px 0px;
