@@ -53,7 +53,7 @@
     <img src="./img/logo.svg" alt="" />
   </div>
   <div class="container-user">
-    <h4>Sergio Gonzales</h4>
+    <h4>{windowsWidth > 962 ? 'Sergio Gonzales' : ''}</h4>
     <img src="/img/icon-logout.svg" alt="logout" />
   </div>
 </header>
