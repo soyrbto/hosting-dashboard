@@ -95,4 +95,10 @@
       justify-self: center;
     }
   }
+
+  @media only screen and (max-width: 962px) {
+    .card-wrapper {
+      grid-template-rows: auto 2fr auto auto;
+    }
+  }
 </style>
