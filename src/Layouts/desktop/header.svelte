@@ -1,7 +1,7 @@
 <script>
   import { createEventDispatcher } from 'svelte';
   import { changeSection, tabState } from '../../store';
-  import { slide } from 'svelte/transition';
+  import { slide, fade } from 'svelte/transition';
   import { cubicInOut } from 'svelte/easing';
   import c from '../../staticContent';
   import { handleImageName } from '../../utilities';
@@ -35,6 +35,7 @@
           {#each items as item, i}
             <li on:click={() => handleClick(i)}>
               <img
+                transition:fade
                 src="./img/{handleImageName(item)}-icon.svg"
                 alt={item}
                 width="18"
