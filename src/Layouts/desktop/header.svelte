@@ -60,6 +60,7 @@
 
 <style lang="scss">
   header {
+    height: flexUnit(70px);
     justify-content: space-between;
     display: flex;
     background-color: #086cff;
