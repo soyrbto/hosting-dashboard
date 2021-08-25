@@ -43,8 +43,6 @@
           <img src="./img/restartIcon.svg" alt="" />
           <img src="./img/reinstallIcon.svg" alt="" />
           <img
-            width="10"
-            height="6"
             class="details"
             src="./img/detailsIcon.svg"
             alt=""
