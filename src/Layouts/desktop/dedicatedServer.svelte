@@ -18,7 +18,6 @@
     <div class="img-wrapper">
       <img
         in:fade={{ delay: 300, duration: 500 }}
-        loading="lazy"
         width="566"
         height="472"
         src="./img/no-server.svg"
