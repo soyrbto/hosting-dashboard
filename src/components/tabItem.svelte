@@ -1,40 +1,30 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+  import { handleImageName } from '../utilities';
   export let itemName;
   export let selected = false;
-  export let icon = false;
+  let smallScreen;
 
   const dispatch = createEventDispatcher();
-
-  function handleImageName(rawName) {
-    let imageName;
-    if (icon) {
-      imageName = rawName.replace(' ', '-').toLowerCase();
-      return imageName;
-    } else {
-      return false;
-    }
-  }
 </script>
 
 <div
   class="main-wrapper"
   class:selected
+  class:small-screen={smallScreen}
   on:click={() => {
     dispatch('clicked');
   }}
 >
   <div class="tab">
-    {#if icon}
-      <img
-        width="29"
-        height="29"
-        src="./img/{handleImageName(icon)}.svg"
-        alt={icon == 'user' ? 'user settings' : 'support'}
-      />
-    {/if}
+    <img
+      width="29"
+      height="29"
+      src="./img/{handleImageName(itemName)}-icon.svg"
+      alt={itemName == 'account' ? 'user settings' : 'support'}
+    />
 
-    <h3 class="tab-item">{itemName}</h3>
+    <h3 class="tab-item">{smallScreen ? '' : itemName}</h3>
   </div>
 
   <div class="vertical-line" />
@@ -45,14 +35,20 @@
     user-select: none;
     cursor: pointer;
     display: flex;
-    flex-grow: 1;
+    flex-basis: 1;
 
     .tab {
-      width: 95%;
+      padding: 0 30px 0 0;
       display: flex;
       align-items: center;
+      width: 95%;
+
+      h3 {
+        width: fit-content;
+      }
 
       .tab-item {
+        width: fit-content;
         padding: 22px 0 22px 10px;
         color: var(--greyLightMedium);
       }
@@ -89,6 +85,18 @@
 
     .vertical-line {
       visibility: visible;
+    }
+  }
+
+  .selected.small-screen {
+    .vertical-line {
+      visibility: hidden;
+    }
+  }
+
+  .small-screen {
+    .tab {
+      margin: 10px 0;
     }
   }
 </style>

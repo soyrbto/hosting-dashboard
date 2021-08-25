@@ -3,16 +3,24 @@
   import Button from '../../components/button.svelte';
   import c from '../../staticContent';
   import ServerTable from '../../components/serverTable.svelte';
+  import Modal from '../../components/modal.svelte';
 
   let table = c.cloudTable;
   let content = c.cloudServer;
+  $: visible = false;
 
   function handleClick() {
     changeSection(4);
   }
+
+  function setPassword() {
+    visible = true;
+  }
 </script>
 
 <div class="cloud-wrapper">
+  <Modal {visible} on:modalClick={() => (visible = !visible)} />
+
   <h1>{content.title}</h1>
   {#if table.length == 0}
     <div class="img-wrapper">
@@ -32,24 +40,21 @@
     <Button content={'Create Server'} {handleClick} icon={'plus-icon'} />
   </div>
 
-  <ServerTable content={table} />
+  <ServerTable content={table} on:setPassword={() => setPassword()} />
 </div>
 
 <style lang="scss">
   .cloud-wrapper {
     display: flex;
-    height: 100%;
-    padding-top: 32px;
-    padding-left: 91px;
-    padding-right: 40px;
-    padding-bottom: 93px;
     flex-direction: column;
+    // padding-top: flexUnit(32px);
+    padding-left: flexUnit(90px);
+    padding-right: flexUnit(40px);
+    // padding-bottom: flexUnit(93px);
 
     .create-server {
       align-self: flex-end;
       margin-bottom: 40px;
-      width: flexUnit(256px);
-      //   height: flexUnit(37px);
     }
 
     .img-wrapper {
@@ -58,10 +63,12 @@
     }
 
     h1 {
+      margin-top: flexUnit(32px);
       margin-bottom: flexUnit(107px);
     }
 
     img {
+      height: auto;
       margin: 0 auto;
       margin-bottom: flexUnit(90px);
     }
@@ -81,6 +88,12 @@
         height: flexibleUnit(57px);
         width: flexibleUnit(327px);
       }
+    }
+  }
+
+  @media only screen and (max-width: 962px) {
+    .cloud-wrapper {
+      padding: 0 flexUnit(40px);
     }
   }
 </style>

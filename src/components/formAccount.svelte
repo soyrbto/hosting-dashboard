@@ -1,5 +1,6 @@
 <script>
   import Button from '../components/button.svelte';
+  import countryList from '../countryList';
 </script>
 
 <div class="form-wrapper">
@@ -18,11 +19,15 @@
     </div>
     <div class="field">
       <label for=""> Country </label>
-      <select name="country" id="" />
+      <select name="country">
+        {#each countryList as country}
+          <option value={country}>{country}</option>
+        {/each}
+      </select>
     </div>
     <div class="field">
       <label for=""> City </label>
-      <select name="city" id="" />
+      <input type="text" />
     </div>
     <div class="field">
       <label for=""> address </label>
@@ -102,6 +107,22 @@
 
         &:not(:last-child) {
           margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 962px) {
+    .form-wrapper {
+      form {
+        flex-direction: column;
+
+        .buttons {
+          margin: 0 auto;
+        }
+
+        .field {
+          width: 100%;
         }
       }
     }

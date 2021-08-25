@@ -9,8 +9,6 @@
   const location = c.cloudLocation;
   const model = c.cloudModel;
   const disk = c.cloudSize;
-
-  // Request: price for every element   /fetch
 </script>
 
 <div class="main-wrapper">

@@ -7,6 +7,7 @@
   export let content = 'call To action';
   export let icon = false;
   export let padding = '';
+  export let mini = false;
 </script>
 
 <!-- 
@@ -23,13 +24,13 @@ function: what to do / static
 <button
   class:disable
   class:secundary
-  style="padding: {padding};"
+  style="padding: {padding}; ;"
   on:click={() => handleClick()}
 >
   {#if icon}
     <img src="./img/{icon}.svg" alt="" />
   {/if}
-  <h4 class="bold">{content}</h4>
+  <h4 class="bold" class:mini>{content}</h4>
 </button>
 
 <style lang="scss">
@@ -45,6 +46,10 @@ function: what to do / static
     color: white;
     box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.08),
       0px 4px 8px rgba(44, 39, 56, 0.1);
+
+    h4.mini {
+      font-size: flexUnit(12px);
+    }
 
     img {
       margin-right: 16px;

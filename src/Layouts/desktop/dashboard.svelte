@@ -23,6 +23,7 @@
 
 <style lang="scss">
   .dashboard-wrapper {
+    width: 100%;
     padding: flexUnit(32px) flexUnit(90px) flexUnit(77px) flexUnit(90px);
 
     h1 {
@@ -53,6 +54,12 @@
       flex-wrap: wrap;
       margin-top: flexUnit(40px);
       justify-content: space-between;
+    }
+  }
+
+  @media only screen and (max-width: 962px) {
+    .dashboard-wrapper {
+      padding: flexUnit(32px) flexUnit(40px) flexUnit(77px);
     }
   }
 </style>

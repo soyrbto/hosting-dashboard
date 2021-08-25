@@ -1,89 +1,85 @@
 <script>
-  import { slide } from 'svelte/transition';
-  import Button from '../components/button.svelte';
-  export let title = false;
-  export let content = {};
+  import { createEventDispatcher } from 'svelte';
+  import ServerInfo from '../components/serverInfo.svelte';
 
-  let open = false;
+  export let open = false;
+  export let lastRow = false;
+  export let title = false;
+  export let content = {
+    price: 'Price',
+    label: 'Label',
+    location: 'Location',
+    status: 'Status',
+    actions: 'Actions',
+    details: 'Details',
+  };
+  const dispatch = createEventDispatcher();
+  let windowsWidth;
+
+  function handleCLick() {
+    dispatch('detail');
+  }
 </script>
 
-{#if title}
-  <div class="component-wrapper">
-    <div class="row title">
-      <div class="label">Label</div>
-      <div class="price">Price</div>
-      <div class="location">Location</div>
-      <div class="status">Status</div>
-      <div class="actions">Actions</div>
-      <div class="details" />
-    </div>
-  </div>
-{/if}
+<svelte:window bind:innerWidth={windowsWidth} />
 
-{#if !title}
-  <div class="component-wrapper">
-    <div class="row">
+<div class="main-wrapper">
+  <div class="component-wrapper" class:title class:last-row={lastRow}>
+    <div class="row" class:open>
       <div class="label">
-        {content.label} <span>{content.system}</span>
+        {content.label}
+        <span>{content.system == undefined ? '' : content.system}</span>
       </div>
       <div class="price">{content.price}</div>
       <div class="location">{content.location}</div>
-      <div class="status {content.status ? 'active' : 'inactive'}">
-        {content.status ? 'Active' : 'Inactive'}
+      <div
+        class="status {!title ? (content.status ? 'active' : 'inactive') : ''}"
+      >
+        {!title ? (content.status ? 'Active' : 'Inactive') : 'Status'}
       </div>
       <div class="actions">
-        <img src="./img/stopIcon.svg" alt="" />
-        <img src="./img/restartIcon.svg" alt="" />
-        <img src="./img/reinstallIcon.svg" alt="" />
+        {#if !title}
+          <img src="./img/stopIcon.svg" alt="" />
+          <img src="./img/restartIcon.svg" alt="" />
+          <img src="./img/reinstallIcon.svg" alt="" />
+          <img
+            class="details"
+            src="./img/detailsIcon.svg"
+            alt=""
+            on:click={handleCLick}
+          />
+        {:else}
+          Actions
+        {/if}
       </div>
       <div class="details">
-        <img
-          on:click={() => {
-            open = !open;
-          }}
-          src="./img/detailsIcon.svg"
-          alt=""
-        />
+        {#if !title}
+          <img
+            on:click={() => {
+              open = !open;
+            }}
+            src="./img/detailsIcon.svg"
+            alt=""
+          />
+        {/if}
       </div>
     </div>
 
-    {#if open}
-      <div class="row subtable" transition:slide>
-        <div>
-          IP address
-          <span> 192.256.65.1 </span>
-        </div>
-        <div>
-          aditional IPs
-          <span> 192.256.65.1 </span>
-          <span> 192.256.65.1 </span>
-        </div>
-        <div>
-          Password
-          <span> <input type="password" /> </span>
-        </div>
-        <div>
-          OS
-          <span> Linux 001 </span>
-        </div>
-        <div class="button-wrapper">
-          <Button
-            secundary={true}
-            padding={`6px 20px`}
-            content={'Clone Server'}
-          />
-        </div>
-      </div>
+    {#if windowsWidth > 962}
+      <ServerInfo {open} />
     {/if}
   </div>
-{/if}
+</div>
 
 <style lang="scss">
   .component-wrapper {
+    flex-wrap: wrap;
     .row {
-      height: 61px;
-      padding: 0px 40px;
+      border-bottom: solid 1px #bcbcbc;
+      padding: 16px 40px;
       display: flex;
+      flex-grow: 1;
+      align-items: center;
 
       .details {
         width: 2%;
@@ -104,7 +100,6 @@
       }
 
       div {
-        padding-top: 16px;
         color: var(--greyMedium);
         width: 20%;
         font-family: Nunito Sans;
@@ -122,27 +117,18 @@
           font-style: normal;
           font-weight: 400;
           font-size: flexUnit(12px);
+          display: flex;
+          align-items: center;
 
-          input {
-            width: 80%;
+          img {
+            margin-left: 10px;
           }
         }
       }
     }
 
-    .subtable {
-      background-color: #eaf3fe;
-      height: auto;
-      padding: 5px 40px;
-
-      div {
-        padding: 10px 0px;
-      }
-
-      .button-wrapper {
-        width: 176px;
-        height: 37px;
-      }
+    .row.open {
+      border-bottom: none;
     }
 
     .title {
@@ -153,6 +139,54 @@
         font-style: normal;
         font-weight: 700;
         font-size: flexUnit(22px);
+      }
+    }
+  }
+
+  .component-wrapper.last-row {
+    .row {
+      border-bottom: none;
+    }
+  }
+
+  .component-wrapper.title {
+    div > div {
+      color: black;
+      font-weight: 700;
+    }
+  }
+
+  @media only screen and (max-width: 962px) {
+    .component-wrapper {
+      margin: 0 auto;
+      .row {
+        justify-content: space-between;
+        border: none;
+        flex-grow: 1;
+        flex-direction: column;
+        height: 100%;
+        padding: 0 0 0 15px;
+
+        & > div {
+          height: flexUnit(40px);
+          width: 100%;
+          & + * {
+            margin-top: 15px;
+          }
+        }
+
+        .actions {
+          display: flex;
+
+          .details {
+            display: inline;
+          }
+        }
+
+        .details {
+          display: none;
+          width: auto;
+        }
       }
     }
   }

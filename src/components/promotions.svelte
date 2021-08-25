@@ -20,7 +20,7 @@
   <h1 class="title">{promotion.title}</h1>
   <h4 class="content">{promotion.content}</h4>
   <div class="button-wrapper">
-    <Button padding={`10px 32px`} />
+    <Button padding={`10px 32px`} content={'Check Promo'} />
   </div>
   <img
     in:fade={{ delay: 300, duration: 500 }}
@@ -67,16 +67,18 @@
     }
 
     img {
+      height: auto;
+      width: 100%;
       justify-self: end;
       grid-area: image;
     }
   }
 
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 962px) {
     .card-wrapper {
       padding: flexUnitM(30px) flexUnitM(15px);
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 5fr 1fr 1fr;
+      grid-template-rows: 1fr 2fr 1fr 1fr;
       grid-template-areas:
         'title'
         'image'
@@ -91,6 +93,12 @@
 
     .button-wrapper {
       justify-self: center;
+    }
+  }
+
+  @media only screen and (max-width: 962px) {
+    .card-wrapper {
+      grid-template-rows: auto 2fr auto auto;
     }
   }
 </style>

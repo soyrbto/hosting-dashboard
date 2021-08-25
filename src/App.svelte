@@ -14,9 +14,3 @@
     <Desktop />
   </main>
 {/if}
-
-<style lang="scss">
-  main {
-    background-color: var(--blueBackground);
-  }
-</style>

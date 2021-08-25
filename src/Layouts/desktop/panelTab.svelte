@@ -10,14 +10,9 @@
 <aside>
   <div class="fixed-container">
     <div class="top">
-      <div class="logo-container">
-        <img src="./img/logo.svg" alt="" on:click={() => changeSection(0)} />
-      </div>
-
       <div class="top-container">
         {#each itemsTop as itemName, i}
           <TabItem
-            icon={`${itemName}-icon`}
             {itemName}
             selected={$tabState[i]}
             on:clicked={() => changeSection(i)}
@@ -29,34 +24,25 @@
     <div class="bottom-container">
       <TabItem
         itemName={itemsBottom[0]}
-        icon="user"
-        on:clicked={() => changeSection(3)}
         selected={$tabState[3]}
+        on:clicked={() => changeSection(3)}
       />
-      <TabItem itemName={itemsBottom[1]} icon="support" />
+      <TabItem itemName={itemsBottom[1]} />
     </div>
   </div>
 </aside>
 
 <style lang="scss">
   aside {
-    padding-top: 16px;
-    background-color: white;
-
     .fixed-container {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       padding-left: 20px;
-      padding-bottom: flexUnit(50px);
-      height: 100vh;
+      padding-top: flexUnit(84px);
+      padding-bottom: flexUnit(10px);
+      height: 92vh;
       background-color: white;
-      width: 20%;
-      position: fixed;
-    }
-
-    .logo-container {
-      margin-bottom: 44px;
     }
   }
 </style>
