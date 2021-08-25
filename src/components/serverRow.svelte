@@ -168,6 +168,7 @@
         padding: 0 0 0 15px;
 
         & > div {
+          height: flexUnit(40px);
           width: 100%;
           & + * {
             margin-top: 15px;

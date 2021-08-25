@@ -34,7 +34,12 @@
         <ul>
           {#each items as item, i}
             <li on:click={() => handleClick(i)}>
-              <img src="./img/{handleImageName(item)}-icon.svg" alt={item} />
+              <img
+                src="./img/{handleImageName(item)}-icon.svg"
+                alt={item}
+                width="18"
+                height="18"
+              />
               <h3 class:select={$tabState[i]}>{item}</h3>
             </li>
           {/each}
