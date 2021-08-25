@@ -143,9 +143,6 @@
   @media only screen and (max-width: 962px) {
     .row {
       span {
-        input {
-          width: auto;
-        }
         .set-pass {
           width: auto;
         }
