@@ -1,4 +1,5 @@
 <script>
+  import Slider from '../../components/slider.svelte';
   import c from '../../staticContent';
   import CardLocation from '../../components/cardLocation.svelte';
   import CardModel from '../../components/cardModel.svelte';
@@ -9,6 +10,22 @@
   const location = c.cloudLocation;
   const model = c.cloudModel;
   const disk = c.cloudSize;
+
+  const bandwidth = {
+    title: 'Bandwidth',
+    min: 50,
+    max: 500,
+    step: 50,
+    item: 'mbps',
+  };
+
+  const subnets = {
+    title: 'Subnets',
+    min: 1,
+    max: 60,
+    step: 1,
+    item: 'Subnets',
+  };
 </script>
 
 <div class="main-wrapper">
@@ -54,6 +71,15 @@
     </div>
   </div>
 
+  <div class="sliders">
+    <div class="network">
+      <Slider conditions={bandwidth} />
+    </div>
+    <div class="subnets">
+      <Slider conditions={subnets} />
+    </div>
+  </div>
+
   <div class="goodbye">
     <h4 class="price bold">Price: 746$/year</h4>
     <p class="bodyVerySmall">{content.byeText}</p>
@@ -63,13 +89,12 @@
 
 <style lang="scss">
   .main-wrapper {
-    width: 1540px;
-    padding: 0 60px;
+    padding: 0 flexUnit(60px);
     background-color: #f3f8fc;
 
     h1 {
-      margin-top: 35px;
-      margin-bottom: 45px;
+      margin-top: flexUnit(35px);
+      margin-bottom: flexUnit(45px);
     }
 
     .label-wrapper {
@@ -81,7 +106,7 @@
         background-color: white;
         border-radius: 5px;
         height: 40px;
-        width: 513px;
+        width: 35%;
 
         &::placeholder {
           margin-left: 5px;
@@ -90,7 +115,7 @@
     }
 
     h2 {
-      margin-bottom: 25px;
+      margin-bottom: flexUnit(25px);
     }
 
     h4 {
@@ -102,12 +127,12 @@
     }
 
     .card-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      display: flex;
+      flex-wrap: wrap;
 
       .card-wrapper {
-        margin-right: 65px;
-        margin-bottom: 55px;
+        margin-right: flexUnit(65px);
+        margin-bottom: flexUnit(55px);
       }
     }
 
@@ -122,13 +147,36 @@
       margin: 0 auto;
       margin-top: 95px;
       text-align: center;
-      width: 370px;
-      margin-bottom: 60px;
+      width: fit-content;
+      margin-bottom: flexUnit(60px);
 
       .price {
         display: flex;
         justify-content: center;
         margin-bottom: 13px;
+      }
+    }
+
+    .sliders {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+      & > div {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 962px) {
+    .main-wrapper {
+      .card-section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .card-wrapper {
+          margin-right: 0;
+          margin-bottom: flexUnit(35px);
+        }
       }
     }
   }

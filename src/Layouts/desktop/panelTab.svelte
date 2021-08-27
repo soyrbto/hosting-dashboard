@@ -34,6 +34,8 @@
 
 <style lang="scss">
   aside {
+    position: sticky;
+    top: 0;
     .fixed-container {
       display: flex;
       flex-direction: column;

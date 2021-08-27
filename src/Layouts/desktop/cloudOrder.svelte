@@ -5,12 +5,10 @@
   import CardSize from '../../components/cardMemory.svelte';
   import Button from '../../components/button.svelte';
 
-  const content = c.cloudOrder;
+  const content = c.dedicatedOrder;
   const location = c.cloudLocation;
   const model = c.cloudModel;
   const disk = c.cloudSize;
-
-  // Request: price for every element   /fetch
 </script>
 
 <div class="main-wrapper">
@@ -65,13 +63,12 @@
 
 <style lang="scss">
   .main-wrapper {
-    width: 1540px;
-    padding: 0 60px;
+    padding: 0 flexUnit(60px);
     background-color: #f3f8fc;
 
     h1 {
-      margin-top: 32px;
-      margin-bottom: 45px;
+      margin-top: flexUnit(35px);
+      margin-bottom: flexUnit(45px);
     }
 
     .label-wrapper {
@@ -83,7 +80,7 @@
         background-color: white;
         border-radius: 5px;
         height: 40px;
-        width: 513px;
+        width: 35%;
 
         &::placeholder {
           margin-left: 5px;
@@ -92,7 +89,7 @@
     }
 
     h2 {
-      margin-bottom: 25px;
+      margin-bottom: flexUnit(25px);
     }
 
     h4 {
@@ -104,12 +101,12 @@
     }
 
     .card-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      display: flex;
+      flex-wrap: wrap;
 
       .card-wrapper {
-        margin-right: 65px;
-        margin-bottom: 55px;
+        margin-right: flexUnit(65px);
+        margin-bottom: flexUnit(55px);
       }
     }
 
@@ -124,13 +121,27 @@
       margin: 0 auto;
       margin-top: 95px;
       text-align: center;
-      width: 370px;
-      margin-bottom: 60px;
+      width: fit-content;
+      margin-bottom: flexUnit(60px);
 
       .price {
         display: flex;
         justify-content: center;
         margin-bottom: 13px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 962px) {
+    .main-wrapper {
+      .card-section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .card-wrapper {
+          margin-right: 0;
+          margin-bottom: flexUnit(35px);
+        }
       }
     }
   }
