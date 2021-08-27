@@ -1,28 +1,32 @@
 <script>
-  import { beforeUpdate } from 'svelte';
-
-  export let rawOptions, category;
-
-  let options = [];
-
-  beforeUpdate(() => {
-    let someArray = [];
-    for (let i = 0; i < rawOptions.length; i++) {
-      console.log(options[i]);
-      someArray[i] = rawOptions[i].country + '' + rawOptions[i].serverNumber;
-    }
-
-    options = someArray;
-  });
+  import Select from 'svelte-select';
+  export let options;
 </script>
 
 <!-- some markup -->
-<select name={category} id={category}>
-  {#each options as option}
-    <option value={option} />
-  {/each}
-</select>
+<div class="themed custom">
+  <Select
+    items={options}
+    inputStyles={'font-family:nunito sans; font-size:18px;'}
+  />
+</div>
 
 <style lang="scss">
-  // some styles
+  .themed {
+    font-style: normal;
+    border: none;
+    padding: 15px;
+    width: flexUnit(360px);
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: flexUnit(20px);
+  }
+
+  .custom {
+    --border: 3px solid blue;
+    --borderRadius: 5px;
+    //   --placeholderColor: blue;
+    //   --groupTitleFontSize: 100px;
+  }
 </style>

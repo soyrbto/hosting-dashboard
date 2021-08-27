@@ -11,6 +11,21 @@
   const location = c.cloudLocation;
   const model = c.cloudModel;
   const disk = c.cloudSize;
+  let locationList = [];
+  let modelList = [];
+  let diskList = [];
+
+  for (let i = 0; i < location.length; i++) {
+    locationList[i] = location[i].country + '-' + location[i].serverNumber;
+  }
+
+  for (let i = 0; i < model.length; i++) {
+    modelList[i] = model[i].country + '-' + model[i].serverNumber;
+  }
+
+  for (let i = 0; i < disk.length; i++) {
+    diskList[i] = disk[i].country + '-' + disk[i].serverNumber;
+  }
 
   const bandwidth = {
     title: 'Bandwidth',
@@ -50,7 +65,7 @@
         {/each}
       {:else}
         <div class="list">
-          <List rawOptions={location} category={'Country Server'} />
+          <List options={locationList} category={'Country Server'} />
         </div>
       {/if}
     </div>
@@ -60,11 +75,17 @@
     <h2>{content.modelT}</h2>
 
     <div class="card-section">
+      <!-- {#if windowsWidth > 962} -->
       {#each model as model}
         <div class="card-wrapper">
           <CardModel {model} />
         </div>
       {/each}
+      <!-- {:else}
+        <div class="list">
+          <List options={ModelList} />
+        </div> -->
+      <!-- {/if} -->
     </div>
   </div>
 
