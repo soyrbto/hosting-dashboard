@@ -3,14 +3,6 @@
   export let disk;
 </script>
 
-<!-- 
-PROPS:
-
-[TITLE: SERVER TYPE  => (STRING)
-CONTENT: INFORMATION => (HTML)] fetch
-
- -->
-
 <div class="card-wrapper">
   <div class="disk">
     <h2>

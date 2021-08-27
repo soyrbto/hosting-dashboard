@@ -5,6 +5,7 @@
   import CardModel from '../../components/cardModel.svelte';
   import CardSize from '../../components/cardMemory.svelte';
   import Button from '../../components/button.svelte';
+  import List from '../../components/list.svelte';
 
   const content = c.dedicatedOrder;
   const location = c.cloudLocation;
@@ -26,8 +27,10 @@
     step: 1,
     item: 'Subnets',
   };
+  let windowsWidth;
 </script>
 
+<svelte:window bind:innerWidth={windowsWidth} />
 <div class="main-wrapper">
   <h1>{content.title}</h1>
 
@@ -39,11 +42,17 @@
   <div class="location-wrapper">
     <h2>{content.locationT}</h2>
     <div class="card-section">
-      {#each location as location}
-        <div class="card-wrapper">
-          <CardLocation {location} />
+      {#if windowsWidth > 962}
+        {#each location as location}
+          <div class="card-wrapper">
+            <CardLocation {location} />
+          </div>
+        {/each}
+      {:else}
+        <div class="list">
+          <List rawOptions={location} category={'Country Server'} />
         </div>
-      {/each}
+      {/if}
     </div>
   </div>
 
