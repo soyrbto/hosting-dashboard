@@ -31,6 +31,7 @@
       }
 
       .value {
+        width: flexUnit(70px);
         margin-left: flexUnit(17px);
       }
     }
