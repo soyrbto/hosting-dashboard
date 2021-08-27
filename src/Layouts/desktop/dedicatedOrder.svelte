@@ -178,6 +178,15 @@
           margin-bottom: flexUnit(35px);
         }
       }
+
+      .label-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        input {
+          width: 80%;
+        }
+      }
       .sliders {
         flex-direction: column;
         .network {
