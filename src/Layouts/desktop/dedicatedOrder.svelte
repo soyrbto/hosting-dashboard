@@ -178,6 +178,13 @@
           margin-bottom: flexUnit(35px);
         }
       }
+      .sliders {
+        flex-direction: column;
+        .network {
+          margin-top: flexUnit(100px);
+          margin-bottom: flexUnit(100px);
+        }
+      }
     }
   }
 </style>
