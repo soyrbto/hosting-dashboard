@@ -7,7 +7,7 @@
   import Button from '../../components/button.svelte';
   import List from '../../components/list.svelte';
 
-  const content = c.dedicatedOrder;
+  const content = c.cloudOrder;
   const location = c.cloudLocation;
   const model = c.cloudModel;
   const disk = c.cloudSize;
