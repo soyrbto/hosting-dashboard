@@ -1,16 +1,46 @@
 <script>
+  import Slider from '../../components/slider.svelte';
   import c from '../../staticContent';
   import CardLocation from '../../components/cardLocation.svelte';
   import CardModel from '../../components/cardModel.svelte';
   import CardSize from '../../components/cardMemory.svelte';
   import Button from '../../components/button.svelte';
+  import List from '../../components/list.svelte';
 
   const content = c.dedicatedOrder;
   const location = c.cloudLocation;
   const model = c.cloudModel;
   const disk = c.cloudSize;
+  let locationList = [];
+  let diskList = [];
+
+  for (let i = 0; i < location.length; i++) {
+    locationList[i] = `${location[i].country} ${location[i].serverNumber}`;
+  }
+
+  for (let i = 0; i < disk.length; i++) {
+    diskList[i] = `${disk[i].size}GB at ${disk[i].cost}`;
+  }
+
+  const bandwidth = {
+    title: 'Bandwidth',
+    min: 50,
+    max: 500,
+    step: 50,
+    item: 'mbps',
+  };
+
+  const subnets = {
+    title: 'Subnets',
+    min: 1,
+    max: 60,
+    step: 1,
+    item: 'Subnets',
+  };
+  let windowsWidth;
 </script>
 
+<svelte:window bind:innerWidth={windowsWidth} />
 <div class="main-wrapper">
   <h1>{content.title}</h1>
 
@@ -22,11 +52,17 @@
   <div class="location-wrapper">
     <h2>{content.locationT}</h2>
     <div class="card-section">
-      {#each location as location}
-        <div class="card-wrapper">
-          <CardLocation {location} />
+      {#if windowsWidth > 962}
+        {#each location as location}
+          <div class="card-wrapper">
+            <CardLocation {location} />
+          </div>
+        {/each}
+      {:else}
+        <div class="list">
+          <List options={locationList} category={'Country Server'} />
         </div>
-      {/each}
+      {/if}
     </div>
   </div>
 
@@ -34,11 +70,17 @@
     <h2>{content.modelT}</h2>
 
     <div class="card-section">
+      <!-- {#if windowsWidth > 962} -->
       {#each model as model}
         <div class="card-wrapper">
           <CardModel {model} />
         </div>
       {/each}
+      <!-- {:else}
+        <div class="list">
+          <List options={ModelList} />
+        </div> -->
+      <!-- {/if} -->
     </div>
   </div>
 
@@ -46,11 +88,24 @@
     <h2>{content.diskT}</h2>
 
     <div class="card-section">
-      {#each disk as disk}
-        <div class="card-wrapper">
-          <CardSize {disk} />
-        </div>
-      {/each}
+      {#if windowsWidth > 962}
+        {#each disk as disk}
+          <div class="card-wrapper">
+            <CardSize {disk} />
+          </div>
+        {/each}
+      {:else}
+        <List options={diskList} />
+      {/if}
+    </div>
+  </div>
+
+  <div class="sliders">
+    <div class="network">
+      <Slider conditions={bandwidth} />
+    </div>
+    <div class="subnets">
+      <Slider conditions={subnets} />
     </div>
   </div>
 
@@ -130,6 +185,15 @@
         margin-bottom: 13px;
       }
     }
+
+    .sliders {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+      & > div {
+        margin: 0 auto;
+      }
+    }
   }
 
   @media only screen and (max-width: 962px) {
@@ -141,6 +205,22 @@
         .card-wrapper {
           margin-right: 0;
           margin-bottom: flexUnit(35px);
+        }
+      }
+
+      .label-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        input {
+          width: 80%;
+        }
+      }
+      .sliders {
+        flex-direction: column;
+        .network {
+          margin-top: flexUnit(100px);
+          margin-bottom: flexUnit(100px);
         }
       }
     }
