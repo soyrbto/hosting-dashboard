@@ -66,7 +66,7 @@ cloudLocation = [
   { country: 'Canada', serverNumber: 3 },
   { country: 'Singapur', serverNumber: 3 },
   { country: 'Sweden', serverNumber: 1 },
-  { country: 'india', serverNumber: 1 },
+  { country: 'India', serverNumber: 1 },
 ];
 
 cloudModel = [

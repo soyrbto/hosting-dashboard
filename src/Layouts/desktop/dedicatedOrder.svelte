@@ -16,15 +16,11 @@
   let diskList = [];
 
   for (let i = 0; i < location.length; i++) {
-    locationList[i] = location[i].country + '-' + location[i].serverNumber;
-  }
-
-  for (let i = 0; i < model.length; i++) {
-    modelList[i] = model[i].country + '-' + model[i].serverNumber;
+    locationList[i] = `${location[i].country} ${location[i].serverNumber}`;
   }
 
   for (let i = 0; i < disk.length; i++) {
-    diskList[i] = disk[i].country + '-' + disk[i].serverNumber;
+    diskList[i] = `${disk[i].size}GB at ${disk[i].cost}`;
   }
 
   const bandwidth = {
@@ -93,11 +89,15 @@
     <h2>{content.diskT}</h2>
 
     <div class="card-section">
-      {#each disk as disk}
-        <div class="card-wrapper">
-          <CardSize {disk} />
-        </div>
-      {/each}
+      {#if windowsWidth > 962}
+        {#each disk as disk}
+          <div class="card-wrapper">
+            <CardSize {disk} />
+          </div>
+        {/each}
+      {:else}
+        <List options={diskList} />
+      {/if}
     </div>
   </div>
 

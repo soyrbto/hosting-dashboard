@@ -17,7 +17,7 @@ const sections = {
 };
 
 const tabState = writable([true, false, false, false]);
-const activeSection = writable(sections[5]);
+const activeSection = writable(sections[0]);
 
 function changeSection(sectionIndex) {
   activeSection.set(sections[sectionIndex]);
