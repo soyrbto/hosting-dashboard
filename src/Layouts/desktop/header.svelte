@@ -20,6 +20,9 @@
     dispatch('clickMenu', open);
     if (!isNaN(sectionIndex)) changeSection(sectionIndex);
   }
+
+  let stateArray = new Array(items.length).fill(false);
+  stateArray[0] = true;
 </script>
 
 <svelte:window bind:innerWidth={windowsWidth} />
@@ -33,8 +36,15 @@
       <nav>
         <ul>
           {#each items as item, i}
-            <li on:click={() => handleClick(i)}>
+            <li
+              on:click={() => {
+                handleClick(i);
+                stateArray.fill(false);
+                stateArray[i] = !stateArray[i];
+              }}
+            >
               <img
+                class:selected={stateArray[i]}
                 transition:fade
                 src="./img/{handleImageName(item)}-icon.svg"
                 alt={item}
@@ -99,6 +109,11 @@
       top: 55px;
       left: 0;
 
+      img.selected {
+        filter: brightness(0) saturate(100%) invert(43%) sepia(85%)
+          saturate(1777%) hue-rotate(199deg) brightness(102%) contrast(99%);
+      }
+
       nav {
         height: 100%;
         display: flex;
@@ -109,6 +124,7 @@
           display: flex;
           flex-direction: column;
           li {
+            cursor: pointer;
             margin-bottom: 25px;
             align-items: center;
             display: flex;

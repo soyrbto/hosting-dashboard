@@ -40,7 +40,7 @@
 
     .cta-wrapper {
       margin-top: flexUnit(24px);
-      align-self: center;
+      align-self: left;
       height: flexUnit(57px);
     }
   }

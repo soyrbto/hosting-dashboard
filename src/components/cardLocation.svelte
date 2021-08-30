@@ -13,8 +13,8 @@ SERVER: QTY OF SERVERS => (NUMBER)} /fetch
 <div class="card-wrapper">
   <div class="location">
     <img
-      width="58"
-      height="83"
+      width="auto"
+      height="65"
       src="./img/{location.country}.svg"
       alt="server located in {location.country} "
     />

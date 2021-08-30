@@ -18,8 +18,8 @@
 >
   <div class="tab">
     <img
-      width="29"
-      height="29"
+      width="22"
+      height="22"
       src="./img/{handleImageName(itemName)}-icon.svg"
       alt={itemName == 'account' ? 'user settings' : 'support'}
     />
